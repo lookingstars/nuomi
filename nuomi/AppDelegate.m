@@ -25,12 +25,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    
-    
-    
-    
-    
     [self initMob];
+    
+//    [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
+//    [[UITabBar appearance] setTintColor:RGB(252, 74, 132)];
     
     
     return YES;

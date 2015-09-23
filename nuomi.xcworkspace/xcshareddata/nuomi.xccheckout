@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3CAD165A-138A-49A4-A94B-F576FDBA1FA4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>nuomi</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5F97AB22AF29556B461F0AB9D0F77FCB27632FBF</key>
+		<string>https://github.com/lookingstars/nuomi.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>nuomi.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5F97AB22AF29556B461F0AB9D0F77FCB27632FBF</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/lookingstars/nuomi.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5F97AB22AF29556B461F0AB9D0F77FCB27632FBF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5F97AB22AF29556B461F0AB9D0F77FCB27632FBF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>nuomi</string>
+		</dict>
+	</array>
+</dict>
+</plist>

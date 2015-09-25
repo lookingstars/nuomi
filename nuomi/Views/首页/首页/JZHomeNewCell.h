@@ -10,4 +10,13 @@
 
 @interface JZHomeNewCell : UITableViewCell
 
+@property (nonatomic, strong) NSDictionary *homeNewDataDic;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *subtitleLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "JZHomeNewCell.h"
+#import "UIImageView+WebCache.h"
 
 @implementation JZHomeNewCell
 
@@ -18,6 +19,12 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+-(void)setHomeNewDataDic:(NSDictionary *)homeNewDataDic{
+    _homeNewDataDic = homeNewDataDic;
+    self.titleLabel.text = [homeNewDataDic objectForKey:@"adv_title"];
+    self.subtitleLabel.text = [homeNewDataDic objectForKey:@"adv_subtitle"];
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:[homeNewDataDic objectForKey:@"picture_url"]] placeholderImage:[UIImage imageNamed:@"ugc_photo"]];
 }
 
 @end

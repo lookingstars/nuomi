@@ -31,6 +31,8 @@
  */
 @property (nonatomic, strong) NSMutableArray *likeArray;
 
+@property (nonatomic, strong) JZHomepageModel *homepageM;
+
 
 @property (nonatomic, strong) NSMutableArray *bannersArray;
 @property (nonatomic, strong) NSMutableArray *categoryArray;
@@ -89,17 +91,17 @@
     __weak typeof(self) weakself = self;
     [request getDataWithURL:url params:nil success:^(OPDataResponse *responseObject) {
         NSLog(@"获取 首页 数据成功");
-        JZHomepageModel *homepageM = responseObject.data;
+        _homepageM = responseObject.data;
         
-        _bannersArray = [[NSMutableArray alloc] initWithArray:homepageM.banners];
-        _categoryArray = [[NSMutableArray alloc] initWithArray:homepageM.category];
-        _recommendArray = [[NSMutableArray alloc] initWithArray:homepageM.recommend];
-        _specialModel = homepageM.special;
-        _topenModel = homepageM.topten;
+        _bannersArray = [[NSMutableArray alloc] initWithArray:_homepageM.banners];
+        _categoryArray = [[NSMutableArray alloc] initWithArray:_homepageM.category];
+        _recommendArray = [[NSMutableArray alloc] initWithArray:_homepageM.recommend];
+        _specialModel = _homepageM.special;
+        _topenModel = _homepageM.topten;
         
-        [weakself.tableView reloadData];
-        NSLog(@"special===:   %@",homepageM.special);
-        NSLog(@"topten===:   %@",homepageM.topten);
+//        [weakself.tableView reloadData];
+        NSLog(@"special===:   %@",_homepageM.special);
+        NSLog(@"topten===:   %@",_homepageM.topten);
     } failure:^(NSError *error) {
         NSLog(@"获取 首页 数据失败");
     }];
@@ -131,14 +133,30 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3+_likeArray.count;
+    if (_homepageM != nil) {
+        NSInteger num = 5;
+        if (_likeArray.count>0) {
+            num = 1+_likeArray.count;
+        }
+        return num;
+    }else{
+        return 0;
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
-        return 172;
+        return 184;
     }else if(indexPath.row == 1){
+        return 172;
+    }else if (indexPath.row == 2){
         return 80;
+    }else if (indexPath.row == 3){
+        return 240;
+    }else if (indexPath.row == 4){
+        return 132;
+    }else if (indexPath.row == 5){
+        return 36;
     }else{
         return 96;
     }
@@ -146,20 +164,60 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        static NSString *cellIndentifier = @"JZHomeJingxuanCell";
-        JZHomeJingxuanCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+        static NSString *cellIndentifier = @"cell0";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
+        }
         
-        return cell;
-    }else if(indexPath.row == 1){
-        static NSString *cellIndentifier = @"JZHomeNewCell";
-        JZHomeNewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
-        
+        cell.textLabel.text = @"美食，电影";
         //赋值
         return cell;
-    }else if (indexPath.row == 2){
-        static NSString *cellIndentifier = @"JZHomeShopCell";
-        JZHomeShopCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+    }else if(indexPath.row == 1){
+        static NSString *cellIndentifier = @"JZHomeJingxuanCell";
+        JZHomeJingxuanCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+        if (_topenModel) {
+            [cell setListArray:_topenModel.list];
+        }
         
+        
+        return cell;
+    }else if (indexPath.row == 2){
+        static NSString *cellIndentifier = @"JZHomeNewCell";
+        JZHomeNewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+        if (_specialModel.block_1) {
+            [cell setHomeNewDataDic:_specialModel.block_1];
+        }
+        //赋值
+        return cell;
+    }else if (indexPath.row == 3){
+        static NSString *cellIndentifier = @"cell3";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
+        }
+        
+        cell.textLabel.text = @"块";
+        //赋值
+        return cell;
+    }else if (indexPath.row == 4){
+        static NSString *cellIndentifier = @"cell4";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
+        }
+        
+        cell.textLabel.text = @"滑动";
+        //赋值
+        return cell;
+    }else if (indexPath.row == 5){
+        static NSString *cellIndentifier = @"normalCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
+        }
+        
+        cell.textLabel.text = @"猜你喜欢";
         //赋值
         return cell;
     }else{

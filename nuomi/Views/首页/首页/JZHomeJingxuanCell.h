@@ -10,4 +10,7 @@
 
 @interface JZHomeJingxuanCell : UITableViewCell
 
+@property (nonatomic, strong) NSArray *listArray;
+
+
 @end

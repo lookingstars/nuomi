@@ -23,18 +23,28 @@
 
 -(void)setShopM:(JZShopTuanModel *)shopM {
     _shopM = shopM;
+    NSRange range = [shopM.image rangeOfString:@"src="];
+    if (range.location != NSNotFound) {
+        NSString *subStr = [shopM.image substringFromIndex:range.location+range.length];
+        subStr = [subStr stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [self.shopImageView sd_setImageWithURL:[NSURL URLWithString:subStr] placeholderImage:[UIImage imageNamed:@"ugc_photo"]];
+    }
 //    NSString *str = [shopM.image stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    [self.shopImageView sd_setImageWithURL:[NSURL URLWithString:shopM.image] placeholderImage:[UIImage imageNamed:@"ugc_photo"]];
-    NSString *str = @"http://popmobtest.staff.xdf.cn/pop_resource/learno2o/qrCode/36af4769-5aee-4822-a3ae-87d1daaca16e.jpg";
-//    [self.shopImageView sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"ugc_photo"]];
-    NSLog(@"image:  %@",shopM.image);
+//    [self.shopImageView sd_setImageWithURL:[NSURL URLWithString:shopM.image] placeholderImage:[UIImage imageNamed:@"ugc_photo"]];
+    
     self.shopNameLabel.text = shopM.brand_name;
     self.shopDesLabel.text = shopM.short_title;
     self.distanceLabel.text = shopM.distance;
-//    self.newpriceLabel.text = shopM
-//    self.oldPriceLabel.text
+    self.newpriceLabel.text = [NSString stringWithFormat:@"￥%ld",[shopM.groupon_price integerValue]/100];
     self.scoreLabel.text = shopM.score_desc;
-    
+
+    NSString *oldStr = [NSString stringWithFormat:@"%ld",[shopM.market_price integerValue]/100];
+    //中划线
+    NSDictionary *attribtDic = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
+    //下划线
+    //        NSDictionary *attribtDic = @{NSUnderlineStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
+    NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString:oldStr attributes:attribtDic];
+    self.oldPriceLabel.attributedText = attribtStr;
     
     
 }

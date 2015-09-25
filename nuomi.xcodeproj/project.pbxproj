@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D174033C6D68CEB91E1537D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C8EEB1E4AAC86ED2612F16 /* libPods.a */; };
+		E3A3FB051BB4DF88000E9729 /* JZHomepageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB041BB4DF88000E9729 /* JZHomepageModel.m */; };
 		E3B7F05D1BB23600001F4E16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05C1BB23600001F4E16 /* main.m */; };
 		E3B7F0601BB23600001F4E16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05F1BB23600001F4E16 /* AppDelegate.m */; };
 		E3B7F0631BB23600001F4E16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F0621BB23600001F4E16 /* ViewController.m */; };
@@ -226,6 +227,8 @@
 		60A7A3740DF5E8ACE2C4C3E7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CF8DCC1571A5CBD90BDA4009 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D9C8EEB1E4AAC86ED2612F16 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3A3FB031BB4DF88000E9729 /* JZHomepageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZHomepageModel.h; sourceTree = "<group>"; };
+		E3A3FB041BB4DF88000E9729 /* JZHomepageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZHomepageModel.m; sourceTree = "<group>"; };
 		E3B7F0571BB23600001F4E16 /* nuomi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nuomi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B7F05B1BB23600001F4E16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B7F05C1BB23600001F4E16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -522,6 +525,15 @@
 				CF8DCC1571A5CBD90BDA4009 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E3A3FB021BB4DF79000E9729 /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+				E3A3FB031BB4DF88000E9729 /* JZHomepageModel.h */,
+				E3A3FB041BB4DF88000E9729 /* JZHomepageModel.m */,
+			);
+			path = Homepage;
 			sourceTree = "<group>";
 		};
 		E3B7F04E1BB23600001F4E16 = {
@@ -1084,6 +1096,7 @@
 		E3B7F2531BB3F664001F4E16 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				E3A3FB021BB4DF79000E9729 /* Homepage */,
 				E3B7F2551BB3F689001F4E16 /* 猜你喜欢 */,
 			);
 			path = "首页";
@@ -1430,6 +1443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3B7F0631BB23600001F4E16 /* ViewController.m in Sources */,
+				E3A3FB051BB4DF88000E9729 /* JZHomepageModel.m in Sources */,
 				E3B7F2471BB3DC04001F4E16 /* JZHomeJingxuanCell.m in Sources */,
 				E3B7F2441BB3CEC9001F4E16 /* JZHomeNewCell.m in Sources */,
 				E3B7F0E71BB2A8AF001F4E16 /* JZBaseTabBarViewController.m in Sources */,

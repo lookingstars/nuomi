@@ -206,6 +206,10 @@
 		E3B7F2381BB3C866001F4E16 /* JZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F2371BB3C866001F4E16 /* JZHomeViewController.m */; };
 		E3B7F2411BB3CE8C001F4E16 /* JZHomeShopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F2401BB3CE8C001F4E16 /* JZHomeShopCell.m */; };
 		E3B7F2441BB3CEC9001F4E16 /* JZHomeNewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F2431BB3CEC9001F4E16 /* JZHomeNewCell.m */; };
+		E3B7F2471BB3DC04001F4E16 /* JZHomeJingxuanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F2461BB3DC04001F4E16 /* JZHomeJingxuanCell.m */; };
+		E3B7F24A1BB3E7AB001F4E16 /* JZNetworkSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F2491BB3E7AB001F4E16 /* JZNetworkSingleton.m */; };
+		E3B7F2501BB3E90F001F4E16 /* OPDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F24F1BB3E90F001F4E16 /* OPDataResponse.m */; };
+		E3B7F2581BB3F6D7001F4E16 /* JZHomeShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F2571BB3F6D7001F4E16 /* JZHomeShopModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -452,6 +456,14 @@
 		E3B7F2401BB3CE8C001F4E16 /* JZHomeShopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZHomeShopCell.m; sourceTree = "<group>"; };
 		E3B7F2421BB3CEC9001F4E16 /* JZHomeNewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZHomeNewCell.h; sourceTree = "<group>"; };
 		E3B7F2431BB3CEC9001F4E16 /* JZHomeNewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZHomeNewCell.m; sourceTree = "<group>"; };
+		E3B7F2451BB3DC04001F4E16 /* JZHomeJingxuanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZHomeJingxuanCell.h; sourceTree = "<group>"; };
+		E3B7F2461BB3DC04001F4E16 /* JZHomeJingxuanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZHomeJingxuanCell.m; sourceTree = "<group>"; };
+		E3B7F2481BB3E7AB001F4E16 /* JZNetworkSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZNetworkSingleton.h; sourceTree = "<group>"; };
+		E3B7F2491BB3E7AB001F4E16 /* JZNetworkSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZNetworkSingleton.m; sourceTree = "<group>"; };
+		E3B7F24E1BB3E90F001F4E16 /* OPDataResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPDataResponse.h; sourceTree = "<group>"; };
+		E3B7F24F1BB3E90F001F4E16 /* OPDataResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPDataResponse.m; sourceTree = "<group>"; };
+		E3B7F2561BB3F6D7001F4E16 /* JZHomeShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZHomeShopModel.h; sourceTree = "<group>"; };
+		E3B7F2571BB3F6D7001F4E16 /* JZHomeShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZHomeShopModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -596,6 +608,10 @@
 		E3B7F08B1BB27695001F4E16 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E3B7F2531BB3F664001F4E16 /* 首页 */,
+				E3B7F2511BB3F664001F4E16 /* 附近 */,
+				E3B7F2521BB3F664001F4E16 /* 精选 */,
+				E3B7F2541BB3F664001F4E16 /* 我的 */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -659,6 +675,10 @@
 		E3B7F0921BB277C1001F4E16 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E3B7F24E1BB3E90F001F4E16 /* OPDataResponse.h */,
+				E3B7F24F1BB3E90F001F4E16 /* OPDataResponse.m */,
+				E3B7F2481BB3E7AB001F4E16 /* JZNetworkSingleton.h */,
+				E3B7F2491BB3E7AB001F4E16 /* JZNetworkSingleton.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1041,8 +1061,48 @@
 				E3B7F2401BB3CE8C001F4E16 /* JZHomeShopCell.m */,
 				E3B7F2421BB3CEC9001F4E16 /* JZHomeNewCell.h */,
 				E3B7F2431BB3CEC9001F4E16 /* JZHomeNewCell.m */,
+				E3B7F2451BB3DC04001F4E16 /* JZHomeJingxuanCell.h */,
+				E3B7F2461BB3DC04001F4E16 /* JZHomeJingxuanCell.m */,
 			);
 			path = "首页";
+			sourceTree = "<group>";
+		};
+		E3B7F2511BB3F664001F4E16 /* 附近 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "附近";
+			sourceTree = "<group>";
+		};
+		E3B7F2521BB3F664001F4E16 /* 精选 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "精选";
+			sourceTree = "<group>";
+		};
+		E3B7F2531BB3F664001F4E16 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				E3B7F2551BB3F689001F4E16 /* 猜你喜欢 */,
+			);
+			path = "首页";
+			sourceTree = "<group>";
+		};
+		E3B7F2541BB3F664001F4E16 /* 我的 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "我的";
+			sourceTree = "<group>";
+		};
+		E3B7F2551BB3F689001F4E16 /* 猜你喜欢 */ = {
+			isa = PBXGroup;
+			children = (
+				E3B7F2561BB3F6D7001F4E16 /* JZHomeShopModel.h */,
+				E3B7F2571BB3F6D7001F4E16 /* JZHomeShopModel.m */,
+			);
+			path = "猜你喜欢";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1370,12 +1430,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3B7F0631BB23600001F4E16 /* ViewController.m in Sources */,
+				E3B7F2471BB3DC04001F4E16 /* JZHomeJingxuanCell.m in Sources */,
 				E3B7F2441BB3CEC9001F4E16 /* JZHomeNewCell.m in Sources */,
 				E3B7F0E71BB2A8AF001F4E16 /* JZBaseTabBarViewController.m in Sources */,
+				E3B7F2501BB3E90F001F4E16 /* OPDataResponse.m in Sources */,
 				E3B7F0601BB23600001F4E16 /* AppDelegate.m in Sources */,
 				E3B7F2381BB3C866001F4E16 /* JZHomeViewController.m in Sources */,
 				E3B7F2411BB3CE8C001F4E16 /* JZHomeShopCell.m in Sources */,
+				E3B7F2581BB3F6D7001F4E16 /* JZHomeShopModel.m in Sources */,
 				E3B7F05D1BB23600001F4E16 /* main.m in Sources */,
+				E3B7F24A1BB3E7AB001F4E16 /* JZNetworkSingleton.m in Sources */,
 				E3B7F2201BB39B97001F4E16 /* JZMenuButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,10 @@
 #import "JZHomeViewController.h"
 #import "JZHomeShopCell.h"
 #import "JZHomeNewCell.h"
+#import "JZHomeJingxuanCell.h"
+
+#import "JZNetworkSingleton.h"
+#import "JZHomeShopModel.h"
 
 @interface JZHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -21,7 +25,10 @@
 
 
 
-
+/**
+ *  猜你喜欢数据源
+ */
+@property (nonatomic, strong) NSMutableArray *recommendArray;
 
 @end
 
@@ -30,14 +37,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [self initData];
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    
+    [self getRecommendData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)initData {
+    self.recommendArray = [[NSMutableArray alloc] init];
 }
 
 - (IBAction)OnSaoyisaoBtn:(UIButton *)sender {
@@ -52,16 +66,40 @@
     NSLog(@"选择城市");
 }
 
+
+//获取猜你喜欢数据
+-(void)getRecommendData {
+    
+    NSString *url = @"http://app.nuomi.com/naserver/search/likeitem?appid=ios&bduss=&channel=com_dot_apple&cityid=100010000&cuid=11a2e62839f7bed05437dcb826be61a0c47a515c&device=iPhone&ha=5&lbsidfa=ACAF9226-F987-417B-A708-C95D482A732D&locate_city_id=100010000&location=39.989360%2C116.324490&logpage=Home&net=unknown&os=8.2&sheight=1334&sign=faf73b65333f52c39dbe7f9e1a3ec04c&sort_type=0&swidth=750&terminal_type=ios&timestamp=1442906717567&tn=ios&tuan_size=25&uuid=11a2e62839f7bed05437dcb826be61a0c47a515c&v=5.13.0";
+    JZNetworkSingleton *request = [JZNetworkSingleton sharedManager];
+    request.classModel = @"JZHomeShopModel";
+    __weak typeof(self) weakself = self;
+    [request getDataWithURL:url params:nil success:^(OPDataResponse *responseObject){
+        NSLog(@"获取 猜你喜欢 数据成功");
+        if (responseObject.code == 0) {
+            JZHomeShopModel *homeShopM = responseObject.data;
+            _recommendArray = homeShopM.tuan_list;
+            [weakself.tableView reloadData];
+        }else{
+            
+        }
+    } failure:^(NSError *error){
+        NSLog(@"获取 猜你喜欢 数据失败");
+    }];
+}
+
 #pragma mark - **************** UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 3+_recommendArray.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
+        return 172;
+    }else if(indexPath.row == 1){
         return 80;
     }else{
         return 96;
@@ -70,15 +108,29 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
+        static NSString *cellIndentifier = @"JZHomeJingxuanCell";
+        JZHomeJingxuanCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+        
+        return cell;
+    }else if(indexPath.row == 1){
         static NSString *cellIndentifier = @"JZHomeNewCell";
         JZHomeNewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+        
+        //赋值
+        return cell;
+    }else if (indexPath.row == 2){
+        static NSString *cellIndentifier = @"JZHomeShopCell";
+        JZHomeShopCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
         
         //赋值
         return cell;
     }else{
         static NSString *cellIndentifier = @"JZHomeShopCell";
         JZHomeShopCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
-        
+        if (_recommendArray.count>0) {
+            JZShopTuanModel *shopM = _recommendArray[indexPath.row - 3];
+            [cell setShopM:shopM];
+        }
         //赋值
         return cell;
     }
@@ -89,7 +141,7 @@
 
 #pragma mark - **************** UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

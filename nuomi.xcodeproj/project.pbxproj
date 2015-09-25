@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D174033C6D68CEB91E1537D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C8EEB1E4AAC86ED2612F16 /* libPods.a */; };
 		E3A3FB051BB4DF88000E9729 /* JZHomepageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB041BB4DF88000E9729 /* JZHomepageModel.m */; };
+		E3A3FB0B1BB52BCF000E9729 /* HomeMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB0A1BB52BCF000E9729 /* HomeMenuCell.m */; };
+		E3A3FB0D1BB536E8000E9729 /* icon_homepage_entertainmentCategory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FB0C1BB536E8000E9729 /* icon_homepage_entertainmentCategory@2x.png */; };
 		E3B7F05D1BB23600001F4E16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05C1BB23600001F4E16 /* main.m */; };
 		E3B7F0601BB23600001F4E16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05F1BB23600001F4E16 /* AppDelegate.m */; };
 		E3B7F0631BB23600001F4E16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F0621BB23600001F4E16 /* ViewController.m */; };
@@ -229,6 +231,9 @@
 		D9C8EEB1E4AAC86ED2612F16 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A3FB031BB4DF88000E9729 /* JZHomepageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZHomepageModel.h; sourceTree = "<group>"; };
 		E3A3FB041BB4DF88000E9729 /* JZHomepageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZHomepageModel.m; sourceTree = "<group>"; };
+		E3A3FB091BB52BCF000E9729 /* HomeMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeMenuCell.h; sourceTree = "<group>"; };
+		E3A3FB0A1BB52BCF000E9729 /* HomeMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeMenuCell.m; sourceTree = "<group>"; };
+		E3A3FB0C1BB536E8000E9729 /* icon_homepage_entertainmentCategory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_homepage_entertainmentCategory@2x.png"; sourceTree = "<group>"; };
 		E3B7F0571BB23600001F4E16 /* nuomi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nuomi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B7F05B1BB23600001F4E16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B7F05C1BB23600001F4E16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -995,6 +1000,7 @@
 		E3B7F2211BB3A35F001F4E16 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				E3A3FB0C1BB536E8000E9729 /* icon_homepage_entertainmentCategory@2x.png */,
 				E3B7F2221BB3A35F001F4E16 /* icon_nav_cart_normal@2x.png */,
 				E3B7F2231BB3A360001F4E16 /* icon_nav_cart_normal@3x.png */,
 				E3B7F2241BB3A360001F4E16 /* icon_nav_cart_pressed@2x.png */,
@@ -1069,6 +1075,8 @@
 		E3B7F23D1BB3CDDE001F4E16 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				E3A3FB091BB52BCF000E9729 /* HomeMenuCell.h */,
+				E3A3FB0A1BB52BCF000E9729 /* HomeMenuCell.m */,
 				E3B7F23F1BB3CE8C001F4E16 /* JZHomeShopCell.h */,
 				E3B7F2401BB3CE8C001F4E16 /* JZHomeShopCell.m */,
 				E3B7F2421BB3CEC9001F4E16 /* JZHomeNewCell.h */,
@@ -1282,6 +1290,7 @@
 				E3B7F2161BB3960F001F4E16 /* sapi-nav-back-btn-bg.png in Resources */,
 				E3B7F2171BB3960F001F4E16 /* textfieldDelete@2x.png in Resources */,
 				E3B7F1F91BB3960F001F4E16 /* icon_nav_quxiao_normal@3x.png in Resources */,
+				E3A3FB0D1BB536E8000E9729 /* icon_homepage_entertainmentCategory@2x.png in Resources */,
 				E3B7F1CC1BB3960F001F4E16 /* gsafe@3x.png in Resources */,
 				E3B7F1371BB393C6001F4E16 /* icon_refresh_3@2x.png in Resources */,
 				E3B7F1DB1BB3960F001F4E16 /* ic_order_insurance@3x.png in Resources */,
@@ -1445,6 +1454,7 @@
 				E3B7F0631BB23600001F4E16 /* ViewController.m in Sources */,
 				E3A3FB051BB4DF88000E9729 /* JZHomepageModel.m in Sources */,
 				E3B7F2471BB3DC04001F4E16 /* JZHomeJingxuanCell.m in Sources */,
+				E3A3FB0B1BB52BCF000E9729 /* HomeMenuCell.m in Sources */,
 				E3B7F2441BB3CEC9001F4E16 /* JZHomeNewCell.m in Sources */,
 				E3B7F0E71BB2A8AF001F4E16 /* JZBaseTabBarViewController.m in Sources */,
 				E3B7F2501BB3E90F001F4E16 /* OPDataResponse.m in Sources */,

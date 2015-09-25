@@ -14,6 +14,7 @@
 #import "JZNetworkSingleton.h"
 #import "JZHomeShopModel.h"
 #import "JZHomepageModel.h"
+#import "HomeMenuCell.h"
 
 @interface JZHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -100,8 +101,8 @@
         _topenModel = _homepageM.topten;
         
 //        [weakself.tableView reloadData];
-        NSLog(@"special===:   %@",_homepageM.special);
-        NSLog(@"topten===:   %@",_homepageM.topten);
+//        NSLog(@"special===:   %@",_homepageM.special);
+//        NSLog(@"topten===:   %@",_homepageM.topten);
     } failure:^(NSError *error) {
         NSLog(@"获取 首页 数据失败");
     }];
@@ -164,14 +165,12 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        static NSString *cellIndentifier = @"cell0";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+        static NSString *cellIndentifier = @"menucell";
+        HomeMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
         if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
+            cell = [[HomeMenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier menuArray:_categoryArray];
         }
-        
-        cell.textLabel.text = @"美食，电影";
-        //赋值
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else if(indexPath.row == 1){
         static NSString *cellIndentifier = @"JZHomeJingxuanCell";

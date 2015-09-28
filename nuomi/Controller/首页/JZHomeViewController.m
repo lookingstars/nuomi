@@ -15,8 +15,10 @@
 #import "JZHomeShopModel.h"
 #import "JZHomepageModel.h"
 #import "HomeMenuCell.h"
+#import "JZAlbumCell.h"
+#import "JZHomeBlock2Cell.h"
 
-@interface JZHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface JZHomeViewController ()<UITableViewDataSource, UITableViewDelegate,JZAlbumDelegate,JZHomeBlock2Delegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
 
@@ -153,7 +155,11 @@
     }else if (indexPath.row == 2){
         return 80;
     }else if (indexPath.row == 3){
-        return 240;
+        if (_specialModel.block_2) {
+            return [JZHomeBlock2Cell tableView:tableView heightForRowAtIndexPath:indexPath withArray:_specialModel.block_2];
+        }else{
+            return 5;
+        }
     }else if (indexPath.row == 4){
         return 132;
     }else if (indexPath.row == 5){
@@ -191,23 +197,31 @@
         return cell;
     }else if (indexPath.row == 3){
         static NSString *cellIndentifier = @"cell3";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+        JZHomeBlock2Cell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
         if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
+            if (_specialModel.block_2) {
+                cell = [[JZHomeBlock2Cell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier array:_specialModel.block_2];
+            }else{
+                cell = [[JZHomeBlock2Cell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
+            }
         }
         
-        cell.textLabel.text = @"块";
+//        cell.textLabel.text = @"块";
         //赋值
+        cell.delegate = self;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else if (indexPath.row == 4){
         static NSString *cellIndentifier = @"cell4";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+        JZAlbumCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
         if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
+            cell = [[JZAlbumCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier frame:CGRectMake(0, 0, screen_width, 132)];
         }
-        
-        cell.textLabel.text = @"滑动";
+        if (_specialModel.block_3) {
+            [cell setSpecialArray:_specialModel.block_3];
+        }
         //赋值
+        cell.delegate = self;
         return cell;
     }else if (indexPath.row == 5){
         static NSString *cellIndentifier = @"normalCell";
@@ -240,7 +254,15 @@
 }
 
 
+#pragma mark - **************** JZAlbumDelegate
+-(void)didSelectedAlbumAtIndex:(NSInteger)index {
+    NSLog(@"index:%ld",index);
+}
 
+#pragma mark - **************** JZHomeBlock2Delegate
+-(void)didSelectedHomeBlock2AtIndex:(NSInteger)index{
+    NSLog(@"block2  index:%ld",index);
+}
 
 
 /*

@@ -22,7 +22,7 @@ typedef void(^FailureBlock)(NSError *error);
 @property (nonatomic, strong) NSString *classModel;
 
 
-+(instancetype)sharedManager;
++(instancetype)request;
 
 
 -(void)getDataWithURL:(NSString *)url params:(NSDictionary *)userInfo success:(SuccessBlock)success failure:(FailureBlock)failure;

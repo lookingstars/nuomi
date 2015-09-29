@@ -74,7 +74,7 @@
     [dic setObject:@"11a2e62839f7bed05437dcb826be61a0c47a515c" forKey:@"uuid"];
     [dic setObject:@"v" forKey:@"5.13.0"];
     
-    JZNetworkSingleton *request = [JZNetworkSingleton sharedManager];
+    JZNetworkSingleton *request = [JZNetworkSingleton request];
     request.classModel = @"JZTopicModel";
     
     __weak typeof(self) weakself = self;
@@ -138,6 +138,10 @@
 
 
 #pragma mark - **************** UITableViewDelegate
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
 
 /*
 #pragma mark - Navigation

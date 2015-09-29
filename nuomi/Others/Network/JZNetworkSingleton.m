@@ -13,7 +13,7 @@
 
 
 
-+(instancetype)sharedManager{
++(instancetype)request{
     
     return [[[self class] alloc] init];
 //    static JZNetworkSingleton *sharedNetworkSingleton = nil;

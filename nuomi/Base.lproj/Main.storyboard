@@ -506,7 +506,7 @@
                                             <outlet property="imgView" destination="LHf-za-qR2" id="sJT-SB-k9h"/>
                                             <outlet property="subtitleLabel" destination="qPI-hv-SW7" id="Plk-ku-Ggg"/>
                                             <outlet property="titleLabel" destination="ZwW-8q-cdO" id="Ls8-Af-FWd"/>
-                                            <segue destination="MhT-yS-uJu" kind="push" id="9Ux-zD-vuS"/>
+                                            <segue destination="MhT-yS-uJu" kind="push" identifier="pushTopicSegue" id="9Ux-zD-vuS"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="JZHomeShopCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="JZHomeShopCell" rowHeight="96" id="H6s-qF-MgD" customClass="JZHomeShopCell">
@@ -586,6 +586,7 @@
                                             <outlet property="shopDesLabel" destination="B6q-Mg-1md" id="zu6-sP-xMt"/>
                                             <outlet property="shopImageView" destination="BL1-wE-yZs" id="B7h-mf-exh"/>
                                             <outlet property="shopNameLabel" destination="6Sm-Bt-Ffx" id="fSW-A8-MFd"/>
+                                            <segue destination="OvW-pp-SF4" kind="push" id="Pzg-rT-esF"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="m7I-hc-SRl">
@@ -622,6 +623,7 @@
                         <outlet property="cityNameLabel" destination="w9o-zp-KCP" id="AgB-jZ-lT8"/>
                         <outlet property="searchTextField" destination="9VA-F4-ItF" id="ahd-qE-wBa"/>
                         <outlet property="tableView" destination="nbQ-gQ-Bh6" id="zFl-Hg-LMM"/>
+                        <segue destination="ij4-Aj-Wvw" kind="push" id="9oe-KH-qVB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLT-hU-xMI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -663,12 +665,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cu-65-SqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1534" y="-1265"/>
+            <point key="canvasLocation" x="1548.5" y="-1801.5"/>
+        </scene>
+        <!--web-->
+        <scene sceneID="OHL-DX-mWF">
+            <objects>
+                <viewController storyboardIdentifier="JZWebViewController" title="web" hidesBottomBarWhenPushed="YES" id="ij4-Aj-Wvw" customClass="JZWebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mLU-b8-zSu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Max-ZH-6dA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xpf-H8-HJh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inB-iH-tdS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ij4-Aj-Wvw" id="Tyr-HY-ZoK"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="inB-iH-tdS" firstAttribute="top" secondItem="xpf-H8-HJh" secondAttribute="top" id="HM1-mP-kWa"/>
+                            <constraint firstAttribute="bottom" secondItem="inB-iH-tdS" secondAttribute="bottom" id="Mpn-Gd-fN0"/>
+                            <constraint firstItem="inB-iH-tdS" firstAttribute="leading" secondItem="xpf-H8-HJh" secondAttribute="leading" id="PYK-Cr-Syx"/>
+                            <constraint firstAttribute="trailing" secondItem="inB-iH-tdS" secondAttribute="trailing" id="j1s-kn-PZh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="web" id="31x-ip-nrp">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="wY8-Ug-uxG"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="webView" destination="inB-iH-tdS" id="kQm-Ci-85Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e7W-4r-xmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2117" y="-1571"/>
         </scene>
         <!--新用户立减-->
         <scene sceneID="HKm-rb-5yf">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="MhT-yS-uJu" customClass="JZTopicViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JZTopicViewController" hidesBottomBarWhenPushed="YES" id="MhT-yS-uJu" customClass="JZTopicViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3bf-Jx-r1H"/>
                         <viewControllerLayoutGuide type="bottom" id="RXH-9d-uid"/>
@@ -807,7 +850,7 @@
         <!--某店名-->
         <scene sceneID="Nrx-bl-u8r">
             <objects>
-                <viewController id="OvW-pp-SF4" customClass="JZShopViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JZShopViewController" id="OvW-pp-SF4" customClass="JZShopViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gWa-7r-HrZ"/>
                         <viewControllerLayoutGuide type="bottom" id="6KD-Eo-Mzu"/>
@@ -1036,6 +1079,7 @@
                             </view>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="750"/>
                     <connections>
@@ -1089,4 +1133,7 @@
         <image name="tabbar_voice_icon" width="40" height="40"/>
         <image name="ugc_photo" width="68" height="68"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Pzg-rT-esF"/>
+    </inferredMetricsTieBreakers>
 </document>

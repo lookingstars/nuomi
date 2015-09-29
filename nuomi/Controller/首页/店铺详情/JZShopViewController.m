@@ -40,6 +40,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.navigationController.navigationBarHidden = NO;
+    
     [self requestItemDetail];
     [self requestComment];
     [self requestRelatedData];

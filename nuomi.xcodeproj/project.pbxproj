@@ -44,6 +44,7 @@
 		E3A3FB681BBA6510000E9729 /* JZShopPingjiaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB671BBA6510000E9729 /* JZShopPingjiaCell.m */; };
 		E3A3FB6B1BBA652F000E9729 /* JZShopCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB6A1BBA652F000E9729 /* JZShopCommentCell.m */; };
 		E3A3FB6E1BBA7127000E9729 /* JZShopSeeBuyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB6D1BBA7127000E9729 /* JZShopSeeBuyCell.m */; };
+		E3A3FB721BBA8AE4000E9729 /* JZWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB711BBA8AE4000E9729 /* JZWebViewController.m */; };
 		E3B7F05D1BB23600001F4E16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05C1BB23600001F4E16 /* main.m */; };
 		E3B7F0601BB23600001F4E16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05F1BB23600001F4E16 /* AppDelegate.m */; };
 		E3B7F0631BB23600001F4E16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F0621BB23600001F4E16 /* ViewController.m */; };
@@ -317,6 +318,8 @@
 		E3A3FB6A1BBA652F000E9729 /* JZShopCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZShopCommentCell.m; sourceTree = "<group>"; };
 		E3A3FB6C1BBA7127000E9729 /* JZShopSeeBuyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZShopSeeBuyCell.h; sourceTree = "<group>"; };
 		E3A3FB6D1BBA7127000E9729 /* JZShopSeeBuyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZShopSeeBuyCell.m; sourceTree = "<group>"; };
+		E3A3FB701BBA8AE4000E9729 /* JZWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZWebViewController.h; sourceTree = "<group>"; };
+		E3A3FB711BBA8AE4000E9729 /* JZWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZWebViewController.m; sourceTree = "<group>"; };
 		E3B7F0571BB23600001F4E16 /* nuomi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nuomi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B7F05B1BB23600001F4E16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B7F05C1BB23600001F4E16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -722,6 +725,15 @@
 				E3A3FB6D1BBA7127000E9729 /* JZShopSeeBuyCell.m */,
 			);
 			path = "店铺详情";
+			sourceTree = "<group>";
+		};
+		E3A3FB6F1BBA8AC7000E9729 /* 网页 */ = {
+			isa = PBXGroup;
+			children = (
+				E3A3FB701BBA8AE4000E9729 /* JZWebViewController.h */,
+				E3A3FB711BBA8AE4000E9729 /* JZWebViewController.m */,
+			);
+			path = "网页";
 			sourceTree = "<group>";
 		};
 		E3B7F04E1BB23600001F4E16 = {
@@ -1216,6 +1228,7 @@
 		E3B7F2341BB3C83D001F4E16 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				E3A3FB6F1BBA8AC7000E9729 /* 网页 */,
 				E3A3FB491BB9310E000E9729 /* 店铺详情 */,
 				E3A3FB351BB90961000E9729 /* 主题 */,
 				E3A3FB311BB90880000E9729 /* 精选抢购 */,
@@ -1681,6 +1694,7 @@
 				E3B7F0601BB23600001F4E16 /* AppDelegate.m in Sources */,
 				E3A3FB461BB91906000E9729 /* NSString+convertImgStr.m in Sources */,
 				E3A3FB3C1BB90D01000E9729 /* JZTopicImageCell.m in Sources */,
+				E3A3FB721BBA8AE4000E9729 /* JZWebViewController.m in Sources */,
 				E3B7F2381BB3C866001F4E16 /* JZHomeViewController.m in Sources */,
 				E3A3FB381BB9097B000E9729 /* JZTopicViewController.m in Sources */,
 				E3A3FB651BBA5F6C000E9729 /* JZShopNoticeCell.m in Sources */,

@@ -17,6 +17,8 @@
 #import "HomeMenuCell.h"
 #import "JZAlbumCell.h"
 #import "JZHomeBlock2Cell.h"
+#import "JZTopicViewController.h"
+#import "JZWebViewController.h"
 
 @interface JZHomeViewController ()<UITableViewDataSource, UITableViewDelegate,JZAlbumDelegate,JZHomeBlock2Delegate>
 
@@ -58,6 +60,9 @@
     
     [self getHotData];
     [self getRecommendData];
+    NSString *subStr = @"http%3A%2F%2Fhuodong.nuomi.com%2Factshow%2Fmobile%2Fcommon%2Fshort%2Fzhongqiu_manfan%3Fallcity%3D1%26key%3De492d73e8fed3aeac8a9321c94b77932%26cuid%3D11a2e62839f7bed05437dcb826be61a0c47a515c&hasshare=0&shareurl=http%3A%2F%2Fhuodong.nuomi.com%2Factshow%2Fmobile%2Fcommon%2Fshort%2Fzhongqiu_manfan_wap%3Fallcity%3D1";
+    subStr = [subStr stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"subStr :%@",subStr);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,6 +96,7 @@
 
 //获取数据
 -(void)getHotData {
+//    url内部添加有签名加密，所以只能把url写死，不能动态的改变url
     NSString *url = @"http://app.nuomi.com/naserver/home/homepage?appid=ios&bduss=&channel=com_dot_apple&cityid=100010000&cuid=11a2e62839f7bed05437dcb826be61a0c47a515c&device=iPhone&ha=5&lbsidfa=ACAF9226-F987-417B-A708-C95D482A732D&location=39.989360%2C116.324490&logpage=Home&net=unknown&os=8.2&sheight=1334&sign=40c974d176568886ad0e72516645e23f&swidth=750&terminal_type=ios&timestamp=1442906717563&tn=ios&uuid=11a2e62839f7bed05437dcb826be61a0c47a515c&v=5.13.0";
     JZNetworkSingleton *request = [JZNetworkSingleton request];
     request.classModel = @"JZHomepageModel";
@@ -133,6 +139,15 @@
     } failure:^(NSError *error){
         NSLog(@"获取 猜你喜欢 数据失败");
     }];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"pushTopicSegue"]) {
+        JZTopicViewController *topicVC = segue.destinationViewController;
+        NSString *cont = [_homepageM.special.block_1 objectForKey:@"cont"];
+        topicVC.specialid = [NSString getSpecialId:cont];
+        
+    }
 }
 
 #pragma mark - **************** UITableViewDataSource
@@ -261,11 +276,65 @@
 #pragma mark - **************** JZAlbumDelegate
 -(void)didSelectedAlbumAtIndex:(NSInteger)index {
     NSLog(@"index:%ld",index);
+    NSDictionary *dic = _homepageM.special.block_3[index];
+    NSInteger goto_type = [[dic objectForKey:@"goto_type"] integerValue];
+    if (goto_type == 2) {
+        //bainuo://web?
+        NSString *cont = [dic objectForKey:@"cont"];
+        
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        JZWebViewController *VC = [sb instantiateViewControllerWithIdentifier:@"JZWebViewController"];
+        VC.url = [NSString getWebUrl:cont];
+        [self.navigationController pushViewController:VC animated:YES];
+    }else if (goto_type == 5){
+        //bainuo://topic?
+        NSString *cont = [dic objectForKey:@"cont"];
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        JZTopicViewController *VC = [sb instantiateViewControllerWithIdentifier:@"JZTopicViewController"];
+//        VC.specialid = [NSString getSpecialId:cont];
+
+        [self.navigationController pushViewController:VC animated:YES];
+        
+    }else if (goto_type == 8){
+        //http://
+        NSString *cont = [dic objectForKey:@"cont"];
+        
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        JZWebViewController *VC = [sb instantiateViewControllerWithIdentifier:@"JZWebViewController"];
+        VC.url = [NSString getComponentUrl:cont];
+        [self.navigationController pushViewController:VC animated:YES];
+    }
 }
 
 #pragma mark - **************** JZHomeBlock2Delegate
 -(void)didSelectedHomeBlock2AtIndex:(NSInteger)index{
     NSLog(@"block2  index:%ld",index);
+    NSDictionary *dic = _homepageM.special.block_2[index];
+    NSInteger goto_type = [[dic objectForKey:@"goto_type"] integerValue];
+    if (goto_type == 2) {
+        //bainuo://web?
+        NSString *cont = [dic objectForKey:@"cont"];
+        
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        JZWebViewController *VC = [sb instantiateViewControllerWithIdentifier:@"JZWebViewController"];
+        VC.url = [NSString getWebUrl:cont];
+        [self.navigationController pushViewController:VC animated:YES];
+    }else if (goto_type == 5){
+        //bainuo://topic?
+
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        JZTopicViewController *VC = [sb instantiateViewControllerWithIdentifier:@"JZTopicViewController"];
+        [self.navigationController pushViewController:VC animated:YES];
+        
+    }else if (goto_type == 8){
+        //http://
+        NSString *cont = [dic objectForKey:@"cont"];
+        
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        JZWebViewController *VC = [sb instantiateViewControllerWithIdentifier:@"JZWebViewController"];
+        VC.url = [NSString getComponentUrl:cont];
+        [self.navigationController pushViewController:VC animated:YES];
+    }
 }
 
 

@@ -32,6 +32,8 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self initData];
     [self requestData];
+    
+    NSLog(@"specialid:%@",self.specialid);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,11 +45,15 @@
     _dataSource = [[NSMutableArray alloc] init];
 }
 
-
+//197611
+//    url内部添加有签名加密，所以只能把url写死，不能动态的改变url
 -(void)requestData {
-    NSString *url = @"http://112.80.255.88/naserver/home/special?appid=ios&bduss=&channel=com_dot_apple&cityid=100010000&cuid=11a2e62839f7bed05437dcb826be61a0c47a515c&device=iPhone&goods_per_page=15&ha=5&lbsidfa=ACAF9226-F987-417B-A708-C95D482A732D&location=39.989320%2C116.324530&logpage=ActivityList&net=wifi&os=8.2&page_idx=1&sheight=1334&sign=ee82e43ea40205f921e60fefe63fe138&special_id=197611&swidth=750&terminal_type=ios&timestamp=1443415146869&tn=ios&uuid=11a2e62839f7bed05437dcb826be61a0c47a515c&v=5.13.0";
-//    NSString *url = @"http://112.80.255.88/naserver/home/special";
+    NSString *url1 = @"http://112.80.255.88/naserver/home/special?appid=ios&bduss=&channel=com_dot_apple&cityid=100010000&cuid=11a2e62839f7bed05437dcb826be61a0c47a515c&device=iPhone&goods_per_page=15&ha=5&lbsidfa=ACAF9226-F987-417B-A708-C95D482A732D&location=39.989320%2C116.324530&logpage=ActivityList&net=wifi&os=8.2&page_idx=1&sheight=1334&sign=ee82e43ea40205f921e60fefe63fe138";
+    NSString *url2 = @"&swidth=750&terminal_type=ios&timestamp=1443415146869&tn=ios&uuid=11a2e62839f7bed05437dcb826be61a0c47a515c&v=5.13.0";
+//    NSString *url = [NSString stringWithFormat:@"%@&special_id=%@%@",url1,self.specialid,url2];
+    NSString *url = [NSString stringWithFormat:@"%@&special_id=%@%@",url1,@"197611",url2];
     
+//    NSString *url = @"http://112.80.255.88/naserver/home/special";
     //采用这种方式请求不到数据，服务器提示『签名错误』
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:@"ios" forKey:@"appid"];

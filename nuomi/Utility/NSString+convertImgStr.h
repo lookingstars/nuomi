@@ -13,4 +13,10 @@
 //$$$转imgurl
 +(NSString *)convertImgStr:(NSString *)imgStr;
 
++(NSString *)getSpecialId:(NSString *)special;
+
++(NSString *)getWebUrl:(NSString *)cont;
+
++(NSString *)getComponentUrl:(NSString *)cont;
+
 @end

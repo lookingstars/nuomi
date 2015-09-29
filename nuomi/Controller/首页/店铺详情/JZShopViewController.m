@@ -14,6 +14,10 @@
 #import "JZShopRelatedModel.h"
 
 #import "JZShopPriceCell.h"
+#import "JZShopNoticeCell.h"
+#import "JZShopPingjiaCell.h"
+#import "JZShopCommentCell.h"
+#import "JZShopSeeBuyCell.h"
 
 
 @interface JZShopViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -57,15 +61,18 @@
         NSLog(@"请求 店铺详情 成功");
         _shopDetailM = responseObject.data;
         
-        NSString *imgStr = [_shopDetailM.title_about.image firstObject];
-        imgStr = [NSString convertImgStr:imgStr];
-        [weakself.headView sd_setImageWithURL:[NSURL URLWithString:imgStr] placeholderImage:[UIImage imageNamed:@"account_place_holder"]];
-        
-        
+        [weakself setItemDetailData];
         [weakself reloadData];
     } failure:^(NSError *error) {
         NSLog(@"请求 店铺详情 失败");
     }];
+}
+
+-(void)setItemDetailData{
+    NSString *imgStr = [_shopDetailM.title_about.image firstObject];
+    imgStr = [NSString convertImgStr:imgStr];
+    [self.headView sd_setImageWithURL:[NSURL URLWithString:imgStr] placeholderImage:[UIImage imageNamed:@"account_place_holder"]];
+    self.title = _shopDetailM.title_about.business_title;
 }
 
 -(void)requestComment {
@@ -121,38 +128,95 @@
     if (section == 0) {
         return 2;
     }else if (section == 1){
-        return 2;
+        return _shopCommentM.label_detail_comment.count+1;
     }else{
-        return 2;
+        return _shopRelatedM.seebuy.list.count+1;
     }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        return 60;
+        if (indexPath.row == 0) {
+            return 40;
+        }else{
+            return [JZShopNoticeCell tableView:tableView heightForRowAtIndexPath:indexPath withObject:[_shopDetailM.notice objectForKey:@"notice"]];
+        }
     }else if (indexPath.section == 1){
-        return 60;
+        if (indexPath.row == 0) {
+            return 40;
+        }else{
+            JZShopDetailCommentModel *commentM = _shopCommentM.label_detail_comment[indexPath.row -1];
+            return [JZShopCommentCell tableView:tableView heightForRowAtIndexPath:indexPath withObject:commentM];
+        }
     }else{
-        return 60;
+        if (indexPath.row == 0) {
+            return 40;
+        }else{
+            return 90;
+        }
     }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        static NSString *cellIdentifier = @"shopPriceCell";
-        JZShopPriceCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-        
-        return cell;
+        if (indexPath.row == 0) {
+            static NSString *cellIdentifier = @"shopPriceCell";
+            JZShopPriceCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+            
+            if (_shopDetailM.rush_buy) {
+                [cell setRushBuyM:_shopDetailM.rush_buy];
+            }
+            return cell;
+        }else{
+            static NSString *cellIdentifier = @"shopNoticeCell";
+            JZShopNoticeCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+            
+            if (_shopDetailM.notice) {
+                NSString *notice = [_shopDetailM.notice objectForKey:@"notice"];
+                cell.noticeLabel.text = notice;
+            }
+            
+            return cell;
+        }
     }else if (indexPath.section == 1){
-        static NSString *cellIdentifier = @"shopPriceCell";
-        JZShopPriceCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (indexPath.row == 0) {
+            static NSString *cellIdentifier = @"shopPingjiaCell";
+            JZShopPingjiaCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+            if (_shopCommentM) {
+                cell.commentNumLabel.text = [NSString stringWithFormat:@"%@人评价",_shopCommentM.comment];
+            }
+            
+            return cell;
+        }else{
+            static NSString *cellIdentifier = @"shopCommentCell";
+            JZShopCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+            
+            JZShopDetailCommentModel *commentM = _shopCommentM.label_detail_comment[indexPath.row - 1];
+            [cell setCommentM:commentM];
+            
+            return cell;
+        }
         
-        return cell;
     }else{
-        static NSString *cellIdentifier = @"shopPriceCell";
-        JZShopPriceCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (indexPath.row == 0) {
+            static NSString *cellIdentifier = @"normalCell1";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+            if (cell == nil) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            }
+            cell.textLabel.text = @"为您推荐";
+            
+            return cell;
+        }else{
+            static NSString *cellIdentifier = @"shopSeeBuyCell";
+            JZShopSeeBuyCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+            
+            JZShopSeeBuyListModel *listM = _shopRelatedM.seebuy.list[indexPath.row - 1];
+            
+            [cell setListM:listM];
+            return cell;
+        }
         
-        return cell;
     }
 }
 

@@ -23,4 +23,27 @@
              };
 }
 
++(NSValueTransformer *)label_detail_commentJSONTransformer {
+    return [MTLJSONAdapter arrayTransformerWithModelClass:[JZShopDetailCommentModel class]];
+}
+
+@end
+
+@implementation JZShopDetailCommentModel
+
++(NSDictionary *)JSONKeyPathsByPropertyKey{
+    return @{
+             @"nickname":@"nickname",
+             @"score":@"score",
+             @"pic_num":@"pic_num",
+             @"update_time":@"update_time",
+             @"content":@"content",
+             
+             @"pic_url":@"pic_url",
+             @"reply":@"reply",
+             @"reply_num":@"reply_num",
+             @"isuser":@"isuser"
+             };
+}
+
 @end

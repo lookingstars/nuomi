@@ -39,10 +39,10 @@
         
         
         //创建8个
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < 20; i++) {
             JZHomecategoryModel *categoryM = menuArray[i];
-            if (i < 4) {
-                CGRect frame = CGRectMake(i*screen_width/4, 0, screen_width/4, 80);
+            if (i < 5) {
+                CGRect frame = CGRectMake(i*screen_width/5, 0, screen_width/5, 80);
                 NSString *title = categoryM.category_name;
 //                NSString *imageStr = categoryM.category_picurl;
                 NSString *imageStr = @"icon_homepage_entertainmentCategory";
@@ -57,8 +57,8 @@
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(OnTapBtnView:)];
                 [btnView addGestureRecognizer:tap];
                 
-            }else if(i<8){
-                CGRect frame = CGRectMake((i-4)*screen_width/4, 80, screen_width/4, 80);
+            }else if(i<10){
+                CGRect frame = CGRectMake((i-5)*screen_width/5, 80, screen_width/5, 80);
                 NSString *title = categoryM.category_name;
 //                NSString *imageStr = categoryM.category_picurl;
                 NSString *imageStr = @"icon_homepage_entertainmentCategory";
@@ -72,8 +72,8 @@
                 [_backView1 addSubview:btnView];
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(OnTapBtnView:)];
                 [btnView addGestureRecognizer:tap];
-            }else if(i < 12){
-                CGRect frame = CGRectMake((i-8)*screen_width/4, 0, screen_width/4, 80);
+            }else if(i < 15){
+                CGRect frame = CGRectMake((i-10)*screen_width/5, 0, screen_width/5, 80);
                 NSString *title = categoryM.category_name;
 //                NSString *imageStr = categoryM.category_picurl;
                 NSString *imageStr = @"icon_homepage_entertainmentCategory";
@@ -88,7 +88,7 @@
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(OnTapBtnView:)];
                 [btnView addGestureRecognizer:tap];
             }else{
-                CGRect frame = CGRectMake((i-12)*screen_width/4, 80, screen_width/4, 80);
+                CGRect frame = CGRectMake((i-15)*screen_width/5, 80, screen_width/5, 80);
                 NSString *title = categoryM.category_name;
 //                NSString *imageStr = categoryM.category_picurl;
                 NSString *imageStr = @"icon_homepage_entertainmentCategory";

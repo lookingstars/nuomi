@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JZShopDetailModel.h"
 
 @interface JZShopPriceCell : UITableViewCell
+
+@property (nonatomic, strong) JZShopRushBuyModel *rushBuyM;
+
+@property (weak, nonatomic) IBOutlet UILabel *shopNewPriceLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *shopOldPriceLabel;
 
 @end

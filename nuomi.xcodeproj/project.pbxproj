@@ -40,6 +40,10 @@
 		E3A3FB5B1BBA228F000E9729 /* JZShopCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB5A1BBA228F000E9729 /* JZShopCommentModel.m */; };
 		E3A3FB5E1BBA23E3000E9729 /* JZShopRelatedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB5D1BBA23E3000E9729 /* JZShopRelatedModel.m */; };
 		E3A3FB621BBA2F80000E9729 /* JZShopPriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB611BBA2F80000E9729 /* JZShopPriceCell.m */; };
+		E3A3FB651BBA5F6C000E9729 /* JZShopNoticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB641BBA5F6C000E9729 /* JZShopNoticeCell.m */; };
+		E3A3FB681BBA6510000E9729 /* JZShopPingjiaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB671BBA6510000E9729 /* JZShopPingjiaCell.m */; };
+		E3A3FB6B1BBA652F000E9729 /* JZShopCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB6A1BBA652F000E9729 /* JZShopCommentCell.m */; };
+		E3A3FB6E1BBA7127000E9729 /* JZShopSeeBuyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB6D1BBA7127000E9729 /* JZShopSeeBuyCell.m */; };
 		E3B7F05D1BB23600001F4E16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05C1BB23600001F4E16 /* main.m */; };
 		E3B7F0601BB23600001F4E16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05F1BB23600001F4E16 /* AppDelegate.m */; };
 		E3B7F0631BB23600001F4E16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F0621BB23600001F4E16 /* ViewController.m */; };
@@ -305,6 +309,14 @@
 		E3A3FB5D1BBA23E3000E9729 /* JZShopRelatedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZShopRelatedModel.m; sourceTree = "<group>"; };
 		E3A3FB601BBA2F80000E9729 /* JZShopPriceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZShopPriceCell.h; sourceTree = "<group>"; };
 		E3A3FB611BBA2F80000E9729 /* JZShopPriceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZShopPriceCell.m; sourceTree = "<group>"; };
+		E3A3FB631BBA5F6C000E9729 /* JZShopNoticeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZShopNoticeCell.h; sourceTree = "<group>"; };
+		E3A3FB641BBA5F6C000E9729 /* JZShopNoticeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZShopNoticeCell.m; sourceTree = "<group>"; };
+		E3A3FB661BBA6510000E9729 /* JZShopPingjiaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZShopPingjiaCell.h; sourceTree = "<group>"; };
+		E3A3FB671BBA6510000E9729 /* JZShopPingjiaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZShopPingjiaCell.m; sourceTree = "<group>"; };
+		E3A3FB691BBA652F000E9729 /* JZShopCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZShopCommentCell.h; sourceTree = "<group>"; };
+		E3A3FB6A1BBA652F000E9729 /* JZShopCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZShopCommentCell.m; sourceTree = "<group>"; };
+		E3A3FB6C1BBA7127000E9729 /* JZShopSeeBuyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZShopSeeBuyCell.h; sourceTree = "<group>"; };
+		E3A3FB6D1BBA7127000E9729 /* JZShopSeeBuyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZShopSeeBuyCell.m; sourceTree = "<group>"; };
 		E3B7F0571BB23600001F4E16 /* nuomi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nuomi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B7F05B1BB23600001F4E16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B7F05C1BB23600001F4E16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -700,6 +712,14 @@
 			children = (
 				E3A3FB601BBA2F80000E9729 /* JZShopPriceCell.h */,
 				E3A3FB611BBA2F80000E9729 /* JZShopPriceCell.m */,
+				E3A3FB631BBA5F6C000E9729 /* JZShopNoticeCell.h */,
+				E3A3FB641BBA5F6C000E9729 /* JZShopNoticeCell.m */,
+				E3A3FB661BBA6510000E9729 /* JZShopPingjiaCell.h */,
+				E3A3FB671BBA6510000E9729 /* JZShopPingjiaCell.m */,
+				E3A3FB691BBA652F000E9729 /* JZShopCommentCell.h */,
+				E3A3FB6A1BBA652F000E9729 /* JZShopCommentCell.m */,
+				E3A3FB6C1BBA7127000E9729 /* JZShopSeeBuyCell.h */,
+				E3A3FB6D1BBA7127000E9729 /* JZShopSeeBuyCell.m */,
 			);
 			path = "店铺详情";
 			sourceTree = "<group>";
@@ -1655,17 +1675,21 @@
 				E3B7F0E71BB2A8AF001F4E16 /* JZBaseTabBarViewController.m in Sources */,
 				E3A3FB131BB8E02E000E9729 /* JZHomeBlock2Cell.m in Sources */,
 				E3B7F2501BB3E90F001F4E16 /* OPDataResponse.m in Sources */,
+				E3A3FB681BBA6510000E9729 /* JZShopPingjiaCell.m in Sources */,
 				E3A3FB5E1BBA23E3000E9729 /* JZShopRelatedModel.m in Sources */,
+				E3A3FB6B1BBA652F000E9729 /* JZShopCommentCell.m in Sources */,
 				E3B7F0601BB23600001F4E16 /* AppDelegate.m in Sources */,
 				E3A3FB461BB91906000E9729 /* NSString+convertImgStr.m in Sources */,
 				E3A3FB3C1BB90D01000E9729 /* JZTopicImageCell.m in Sources */,
 				E3B7F2381BB3C866001F4E16 /* JZHomeViewController.m in Sources */,
 				E3A3FB381BB9097B000E9729 /* JZTopicViewController.m in Sources */,
+				E3A3FB651BBA5F6C000E9729 /* JZShopNoticeCell.m in Sources */,
 				E3B7F2411BB3CE8C001F4E16 /* JZHomeShopCell.m in Sources */,
 				E3A3FB3F1BB90D18000E9729 /* JZTopicListCell.m in Sources */,
 				E3B7F2581BB3F6D7001F4E16 /* JZHomeShopModel.m in Sources */,
 				E3B7F05D1BB23600001F4E16 /* main.m in Sources */,
 				E3A3FB4C1BB93197000E9729 /* JZShopViewController.m in Sources */,
+				E3A3FB6E1BBA7127000E9729 /* JZShopSeeBuyCell.m in Sources */,
 				E3B7F24A1BB3E7AB001F4E16 /* JZNetworkSingleton.m in Sources */,
 				E3A3FB621BBA2F80000E9729 /* JZShopPriceCell.m in Sources */,
 				E3A3FB431BB910AA000E9729 /* JZTopicModel.m in Sources */,

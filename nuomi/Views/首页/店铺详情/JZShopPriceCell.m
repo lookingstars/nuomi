@@ -20,4 +20,18 @@
     // Configure the view for the selected state
 }
 
+-(void)setRushBuyM:(JZShopRushBuyModel *)rushBuyM {
+    _rushBuyM = rushBuyM;
+    
+    NSString *newPrice = [NSString stringWithFormat:@"￥%ld",[rushBuyM.current_price integerValue]/100];
+    self.shopNewPriceLabel.text = newPrice;
+    
+    NSString *oldPrice = [NSString stringWithFormat:@"%ld",[rushBuyM.market_price integerValue]/100];
+    
+    //中划线
+    NSDictionary *attribtDic = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
+    NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString:oldPrice attributes:attribtDic];
+    self.shopOldPriceLabel.attributedText = attribtStr;
+}
+
 @end

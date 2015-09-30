@@ -30,6 +30,8 @@
 //    [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
 //    [[UITabBar appearance] setTintColor:RGB(252, 74, 132)];
     
+    UINavigationBar *bar = [UINavigationBar appearance];
+    bar.tintColor = navigationBarColor;
     
     return YES;
 }

@@ -93,6 +93,10 @@
 		E3A3FBD11BBA9795000E9729 /* mine_voucher@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FBA11BBA9795000E9729 /* mine_voucher@3x.png */; };
 		E3A3FBD21BBA9795000E9729 /* mine_voucher_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FBA21BBA9795000E9729 /* mine_voucher_gray@2x.png */; };
 		E3A3FBD31BBA9795000E9729 /* mine_voucher_gray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FBA31BBA9795000E9729 /* mine_voucher_gray@3x.png */; };
+		E3A3FBD71BBB81B7000E9729 /* JZJingXuanVIPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FBD61BBB81B7000E9729 /* JZJingXuanVIPCell.m */; };
+		E3A3FBDA1BBB81D3000E9729 /* JZJingXuanBtnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FBD91BBB81D3000E9729 /* JZJingXuanBtnCell.m */; };
+		E3A3FBDD1BBB81E6000E9729 /* JZJingXuanShopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FBDC1BBB81E6000E9729 /* JZJingXuanShopCell.m */; };
+		E3A3FBE11BBB85DE000E9729 /* JZJingXuanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FBE01BBB85DE000E9729 /* JZJingXuanModel.m */; };
 		E3B7F05D1BB23600001F4E16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05C1BB23600001F4E16 /* main.m */; };
 		E3B7F0601BB23600001F4E16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05F1BB23600001F4E16 /* AppDelegate.m */; };
 		E3B7F0631BB23600001F4E16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F0621BB23600001F4E16 /* ViewController.m */; };
@@ -416,6 +420,14 @@
 		E3A3FBA11BBA9795000E9729 /* mine_voucher@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_voucher@3x.png"; sourceTree = "<group>"; };
 		E3A3FBA21BBA9795000E9729 /* mine_voucher_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_voucher_gray@2x.png"; sourceTree = "<group>"; };
 		E3A3FBA31BBA9795000E9729 /* mine_voucher_gray@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_voucher_gray@3x.png"; sourceTree = "<group>"; };
+		E3A3FBD51BBB81B7000E9729 /* JZJingXuanVIPCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZJingXuanVIPCell.h; sourceTree = "<group>"; };
+		E3A3FBD61BBB81B7000E9729 /* JZJingXuanVIPCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZJingXuanVIPCell.m; sourceTree = "<group>"; };
+		E3A3FBD81BBB81D3000E9729 /* JZJingXuanBtnCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZJingXuanBtnCell.h; sourceTree = "<group>"; };
+		E3A3FBD91BBB81D3000E9729 /* JZJingXuanBtnCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZJingXuanBtnCell.m; sourceTree = "<group>"; };
+		E3A3FBDB1BBB81E6000E9729 /* JZJingXuanShopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZJingXuanShopCell.h; sourceTree = "<group>"; };
+		E3A3FBDC1BBB81E6000E9729 /* JZJingXuanShopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZJingXuanShopCell.m; sourceTree = "<group>"; };
+		E3A3FBDF1BBB85DE000E9729 /* JZJingXuanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZJingXuanModel.h; sourceTree = "<group>"; };
+		E3A3FBE01BBB85DE000E9729 /* JZJingXuanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZJingXuanModel.m; sourceTree = "<group>"; };
 		E3B7F0571BB23600001F4E16 /* nuomi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nuomi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B7F05B1BB23600001F4E16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B7F05C1BB23600001F4E16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -885,6 +897,28 @@
 				E3A3FBA31BBA9795000E9729 /* mine_voucher_gray@3x.png */,
 			);
 			path = "我的";
+			sourceTree = "<group>";
+		};
+		E3A3FBD41BBB8106000E9729 /* 精选抢购 */ = {
+			isa = PBXGroup;
+			children = (
+				E3A3FBD51BBB81B7000E9729 /* JZJingXuanVIPCell.h */,
+				E3A3FBD61BBB81B7000E9729 /* JZJingXuanVIPCell.m */,
+				E3A3FBD81BBB81D3000E9729 /* JZJingXuanBtnCell.h */,
+				E3A3FBD91BBB81D3000E9729 /* JZJingXuanBtnCell.m */,
+				E3A3FBDB1BBB81E6000E9729 /* JZJingXuanShopCell.h */,
+				E3A3FBDC1BBB81E6000E9729 /* JZJingXuanShopCell.m */,
+			);
+			path = "精选抢购";
+			sourceTree = "<group>";
+		};
+		E3A3FBDE1BBB85BE000E9729 /* 精选抢购 */ = {
+			isa = PBXGroup;
+			children = (
+				E3A3FBDF1BBB85DE000E9729 /* JZJingXuanModel.h */,
+				E3A3FBE01BBB85DE000E9729 /* JZJingXuanModel.m */,
+			);
+			path = "精选抢购";
 			sourceTree = "<group>";
 		};
 		E3B7F04E1BB23600001F4E16 = {
@@ -1414,6 +1448,7 @@
 		E3B7F23B1BB3CCFE001F4E16 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				E3A3FBD41BBB8106000E9729 /* 精选抢购 */,
 				E3A3FB5F1BBA2F36000E9729 /* 店铺详情 */,
 				E3A3FB391BB90CD8000E9729 /* 主题 */,
 				E3B7F23D1BB3CDDE001F4E16 /* 首页 */,
@@ -1464,6 +1499,7 @@
 		E3B7F2531BB3F664001F4E16 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				E3A3FBDE1BBB85BE000E9729 /* 精选抢购 */,
 				E3A3FB551BBA2110000E9729 /* 店铺详情 */,
 				E3A3FB401BB91082000E9729 /* 主题 */,
 				E3A3FB021BB4DF79000E9729 /* Homepage */,
@@ -1879,8 +1915,11 @@
 			files = (
 				E3A3FB581BBA2134000E9729 /* JZShopDetailModel.m in Sources */,
 				E3B7F0631BB23600001F4E16 /* ViewController.m in Sources */,
+				E3A3FBDA1BBB81D3000E9729 /* JZJingXuanBtnCell.m in Sources */,
 				E3A3FB051BB4DF88000E9729 /* JZHomepageModel.m in Sources */,
+				E3A3FBDD1BBB81E6000E9729 /* JZJingXuanShopCell.m in Sources */,
 				E3A3FB341BB90880000E9729 /* JZJingXuanViewController.m in Sources */,
+				E3A3FBD71BBB81B7000E9729 /* JZJingXuanVIPCell.m in Sources */,
 				E3A3FB101BB54B4A000E9729 /* JZAlbumCell.m in Sources */,
 				E3B7F2471BB3DC04001F4E16 /* JZHomeJingxuanCell.m in Sources */,
 				E3A3FB0B1BB52BCF000E9729 /* HomeMenuCell.m in Sources */,
@@ -1907,6 +1946,7 @@
 				E3B7F24A1BB3E7AB001F4E16 /* JZNetworkSingleton.m in Sources */,
 				E3A3FB621BBA2F80000E9729 /* JZShopPriceCell.m in Sources */,
 				E3A3FB431BB910AA000E9729 /* JZTopicModel.m in Sources */,
+				E3A3FBE11BBB85DE000E9729 /* JZJingXuanModel.m in Sources */,
 				E3B7F2201BB39B97001F4E16 /* JZMenuButton.m in Sources */,
 				E3A3FB5B1BBA228F000E9729 /* JZShopCommentModel.m in Sources */,
 			);

@@ -282,33 +282,10 @@
 -(void)didSelectedAlbumAtIndex:(NSInteger)index {
     NSLog(@"index:%ld",index);
     NSDictionary *dic = _homepageM.special.block_3[index];
+    NSString *cont = [dic objectForKey:@"cont"];
     NSInteger goto_type = [[dic objectForKey:@"goto_type"] integerValue];
-    if (goto_type == 2) {
-        //bainuo://web?
-        NSString *cont = [dic objectForKey:@"cont"];
-        
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        JZWebViewController *VC = [sb instantiateViewControllerWithIdentifier:@"JZWebViewController"];
-        VC.url = [NSString getWebUrl:cont];
-        [self.navigationController pushViewController:VC animated:YES];
-    }else if (goto_type == 5){
-        //bainuo://topic?
-        NSString *cont = [dic objectForKey:@"cont"];
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        JZTopicViewController *VC = [sb instantiateViewControllerWithIdentifier:@"JZTopicViewController"];
-//        VC.specialid = [NSString getSpecialId:cont];
-
-        [self.navigationController pushViewController:VC animated:YES];
-        
-    }else if (goto_type == 8){
-        //http://
-        NSString *cont = [dic objectForKey:@"cont"];
-        
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        JZWebViewController *VC = [sb instantiateViewControllerWithIdentifier:@"JZWebViewController"];
-        VC.url = [NSString getComponentUrl:cont];
-        [self.navigationController pushViewController:VC animated:YES];
-    }
+    
+    [self gotoViewControllerWithType:goto_type withCont:cont];
 }
 
 #pragma mark - **************** JZHomeBlock2Delegate
@@ -316,32 +293,49 @@
     NSLog(@"block2  index:%ld",index);
     NSDictionary *dic = _homepageM.special.block_2[index];
     NSInteger goto_type = [[dic objectForKey:@"goto_type"] integerValue];
-    if (goto_type == 2) {
-        //bainuo://web?
-        NSString *cont = [dic objectForKey:@"cont"];
+    NSString *cont = [dic objectForKey:@"cont"];
+    
+    [self gotoViewControllerWithType:goto_type withCont:cont];
+}
+
+
+-(void)gotoViewControllerWithType:(NSInteger)type withCont:(NSString *)cont{
+    NSLog(@"goto_type:%ld",type);
+    if (type == 1) {
         
+    }else if (type == 2){
+        //bainuo://web?
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         JZWebViewController *VC = [sb instantiateViewControllerWithIdentifier:@"JZWebViewController"];
         VC.url = [NSString getWebUrl:cont];
         [self.navigationController pushViewController:VC animated:YES];
-    }else if (goto_type == 5){
+    }else if (type == 3){
+        
+    }else if (type == 4){
+        
+    }else if (type == 5){
         //bainuo://topic?
-
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         JZTopicViewController *VC = [sb instantiateViewControllerWithIdentifier:@"JZTopicViewController"];
         [self.navigationController pushViewController:VC animated:YES];
+    }else if (type == 6){
         
-    }else if (goto_type == 8){
+    }else if (type == 7){
+        
+    }else if (type == 8){
         //http://
-        NSString *cont = [dic objectForKey:@"cont"];
-        
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         JZWebViewController *VC = [sb instantiateViewControllerWithIdentifier:@"JZWebViewController"];
         VC.url = [NSString getComponentUrl:cont];
         [self.navigationController pushViewController:VC animated:YES];
+    }else if (type == 9){
+        
+    }else{
+        
     }
+    
+    
 }
-
 
 /*
 #pragma mark - Navigation

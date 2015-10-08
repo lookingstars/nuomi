@@ -44,64 +44,116 @@
             if (i < 5) {
                 CGRect frame = CGRectMake(i*screen_width/5, 0, screen_width/5, 80);
                 NSString *title = categoryM.category_name;
-//                NSString *imageStr = categoryM.category_picurl;
+                NSString *imageStr1 = categoryM.category_picurl;
                 NSString *imageStr = @"icon_homepage_entertainmentCategory";
 
-                JZMenuButton *btnView = [[JZMenuButton alloc] initWithFrame:frame];
-                [btnView setTitle:title forState:UIControlStateNormal];
-                [btnView setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-                [btnView setImage:[UIImage imageNamed:imageStr] forState:UIControlStateNormal];
+//                JZMenuButton *btnView = [[JZMenuButton alloc] initWithFrame:frame];
+//                [btnView setTitle:title forState:UIControlStateNormal];
+//                [btnView setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//                [btnView setImage:[UIImage imageNamed:imageStr] forState:UIControlStateNormal];
 //                JZMTBtnView *btnView = [[JZMTBtnView alloc] initWithFrame:frame title:title imageStr:imageStr];
-                btnView.tag = 10+i;
-                [_backView1 addSubview:btnView];
+//                btnView.tag = 10+i;
+//                [_backView1 addSubview:btnView];
+//                UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(OnTapBtnView:)];
+//                [btnView addGestureRecognizer:tap];
+                //换掉
+                UIView *menubackView = [[UIView alloc] initWithFrame:frame];
+                menubackView.tag = 10+i;
+                [_backView1 addSubview:menubackView];
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(OnTapBtnView:)];
-                [btnView addGestureRecognizer:tap];
+                [menubackView addGestureRecognizer:tap];
+                
+                CGFloat frameWidth = frame.size.width;
+                CGFloat frameHeight = frame.size.height;
+                //图
+                UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(frameWidth/2-20, 20, 40, 40)];
+                [imageView sd_setImageWithURL:[NSURL URLWithString:imageStr1] placeholderImage:[UIImage imageNamed:imageStr]];
+                [menubackView addSubview:imageView];
+                //文字
+                UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(imageView.frame), frameWidth, 20)];
+                titleLabel.font = [UIFont systemFontOfSize:12];
+                titleLabel.textAlignment = NSTextAlignmentCenter;
+                titleLabel.text = title;
+                [menubackView addSubview:titleLabel];
+                
+                
+                
                 
             }else if(i<10){
                 CGRect frame = CGRectMake((i-5)*screen_width/5, 80, screen_width/5, 80);
                 NSString *title = categoryM.category_name;
-//                NSString *imageStr = categoryM.category_picurl;
+                NSString *imageStr1 = categoryM.category_picurl;
                 NSString *imageStr = @"icon_homepage_entertainmentCategory";
                 
-                JZMenuButton *btnView = [[JZMenuButton alloc] initWithFrame:frame];
-                [btnView setTitle:title forState:UIControlStateNormal];
-                [btnView setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-                [btnView setImage:[UIImage imageNamed:imageStr] forState:UIControlStateNormal];
-//                JZMTBtnView *btnView = [[JZMTBtnView alloc] initWithFrame:frame title:title imageStr:imageStr];
-                btnView.tag = 10+i;
-                [_backView1 addSubview:btnView];
+                //换掉
+                UIView *menubackView = [[UIView alloc] initWithFrame:frame];
+                menubackView.tag = 10+i;
+                [_backView1 addSubview:menubackView];
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(OnTapBtnView:)];
-                [btnView addGestureRecognizer:tap];
+                [menubackView addGestureRecognizer:tap];
+                
+                CGFloat frameWidth = frame.size.width;
+                CGFloat frameHeight = frame.size.height;
+                //图
+                UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(frameWidth/2-20, 20, 40, 40)];
+                [imageView sd_setImageWithURL:[NSURL URLWithString:imageStr1] placeholderImage:[UIImage imageNamed:imageStr]];
+                [menubackView addSubview:imageView];
+                //文字
+                UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(imageView.frame), frameWidth, 20)];
+                titleLabel.font = [UIFont systemFontOfSize:12];
+                titleLabel.textAlignment = NSTextAlignmentCenter;
+                titleLabel.text = title;
+                [menubackView addSubview:titleLabel];
             }else if(i < 15){
                 CGRect frame = CGRectMake((i-10)*screen_width/5, 0, screen_width/5, 80);
                 NSString *title = categoryM.category_name;
-//                NSString *imageStr = categoryM.category_picurl;
+                NSString *imageStr1 = categoryM.category_picurl;
                 NSString *imageStr = @"icon_homepage_entertainmentCategory";
                 
-                JZMenuButton *btnView = [[JZMenuButton alloc] initWithFrame:frame];
-                [btnView setTitle:title forState:UIControlStateNormal];
-                [btnView setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-                [btnView setImage:[UIImage imageNamed:imageStr] forState:UIControlStateNormal];
-//                JZMTBtnView *btnView = [[JZMTBtnView alloc] initWithFrame:frame title:title imageStr:imageStr];
-                btnView.tag = 10+i;
-                [_backView2 addSubview:btnView];
+                //换掉
+                UIView *menubackView = [[UIView alloc] initWithFrame:frame];
+                menubackView.tag = 10+i;
+                [_backView2 addSubview:menubackView];
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(OnTapBtnView:)];
-                [btnView addGestureRecognizer:tap];
+                [menubackView addGestureRecognizer:tap];
+                
+                CGFloat frameWidth = frame.size.width;
+                CGFloat frameHeight = frame.size.height;
+                //图
+                UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(frameWidth/2-20, 20, 40, 40)];
+                [imageView sd_setImageWithURL:[NSURL URLWithString:imageStr1] placeholderImage:[UIImage imageNamed:imageStr]];
+                [menubackView addSubview:imageView];
+                //文字
+                UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(imageView.frame), frameWidth, 20)];
+                titleLabel.font = [UIFont systemFontOfSize:12];
+                titleLabel.textAlignment = NSTextAlignmentCenter;
+                titleLabel.text = title;
+                [menubackView addSubview:titleLabel];
             }else{
                 CGRect frame = CGRectMake((i-15)*screen_width/5, 80, screen_width/5, 80);
                 NSString *title = categoryM.category_name;
-//                NSString *imageStr = categoryM.category_picurl;
+                NSString *imageStr1 = categoryM.category_picurl;
                 NSString *imageStr = @"icon_homepage_entertainmentCategory";
                 
-                JZMenuButton *btnView = [[JZMenuButton alloc] initWithFrame:frame];
-                [btnView setTitle:title forState:UIControlStateNormal];
-                [btnView setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-                [btnView setImage:[UIImage imageNamed:imageStr] forState:UIControlStateNormal];
-//                JZMTBtnView *btnView = [[JZMTBtnView alloc] initWithFrame:frame title:title imageStr:imageStr];
-                btnView.tag = 10+i;
-                [_backView2 addSubview:btnView];
+                //换掉
+                UIView *menubackView = [[UIView alloc] initWithFrame:frame];
+                menubackView.tag = 10+i;
+                [_backView2 addSubview:menubackView];
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(OnTapBtnView:)];
-                [btnView addGestureRecognizer:tap];
+                [menubackView addGestureRecognizer:tap];
+                
+                CGFloat frameWidth = frame.size.width;
+                CGFloat frameHeight = frame.size.height;
+                //图
+                UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(frameWidth/2-20, 20, 40, 40)];
+                [imageView sd_setImageWithURL:[NSURL URLWithString:imageStr1] placeholderImage:[UIImage imageNamed:imageStr]];
+                [menubackView addSubview:imageView];
+                //文字
+                UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(imageView.frame), frameWidth, 20)];
+                titleLabel.font = [UIFont systemFontOfSize:12];
+                titleLabel.textAlignment = NSTextAlignmentCenter;
+                titleLabel.text = title;
+                [menubackView addSubview:titleLabel];
             }
         }
         

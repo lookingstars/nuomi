@@ -1,14 +1,14 @@
 //
-//  JZWebViewController.m
+//  JZTabbarJXViewController.m
 //  nuomi
 //
-//  Created by jinzelu on 15/9/29.
+//  Created by jinzelu on 15/10/8.
 //  Copyright (c) 2015年 jinzelu. All rights reserved.
 //
 
-#import "JZWebViewController.h"
+#import "JZTabbarJXViewController.h"
 
-@interface JZWebViewController ()<UIWebViewDelegate>
+@interface JZTabbarJXViewController ()<UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
@@ -16,15 +16,16 @@
 
 @end
 
-@implementation JZWebViewController
+@implementation JZTabbarJXViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationController.navigationBarHidden = NO;
+    
+    NSString *url = @"http://t10.nuomi.com/webapp/na/topten?from=fr_na_t10tab&sizeLimit=8&version=2&needstorecard=1&areaId=100010000&location=39.989430,116.324470&bn_aid=ios&bn_v=5.13.0&bn_chn=com_dot_apple";
     
     self.webView.scalesPageToFit = YES;
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.url]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [self.webView loadRequest:request];
     
     [self initViews];
@@ -35,6 +36,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 -(void)initViews{
     _activityView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(screen_width/2-15, screen_height/2-15, 30, 30)];
     _activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
@@ -42,8 +44,6 @@
     [self.view addSubview:_activityView];
     [self.view bringSubviewToFront:_activityView];
 }
-
-
 
 #pragma mark - **************** UIWebViewDelegate
 -(void)webViewDidStartLoad:(UIWebView *)webView{
@@ -53,7 +53,7 @@
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
     NSLog(@"加载webview完成");
     NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
-    self.title = theTitle;
+//    self.title = theTitle;
     
     [_activityView stopAnimating];
 }

@@ -97,6 +97,11 @@
 		E3A3FBDA1BBB81D3000E9729 /* JZJingXuanBtnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FBD91BBB81D3000E9729 /* JZJingXuanBtnCell.m */; };
 		E3A3FBDD1BBB81E6000E9729 /* JZJingXuanShopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FBDC1BBB81E6000E9729 /* JZJingXuanShopCell.m */; };
 		E3A3FBE11BBB85DE000E9729 /* JZJingXuanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FBE01BBB85DE000E9729 /* JZJingXuanModel.m */; };
+		E3A3FBE41BC63DDA000E9729 /* JZTabbarJXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FBE31BC63DDA000E9729 /* JZTabbarJXViewController.m */; };
+		E3A3FBE91BC669A6000E9729 /* mine_notification_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FBE51BC669A6000E9729 /* mine_notification_gray@2x.png */; };
+		E3A3FBEA1BC669A6000E9729 /* mine_notification_gray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FBE61BC669A6000E9729 /* mine_notification_gray@3x.png */; };
+		E3A3FBEB1BC669A6000E9729 /* mine_notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FBE71BC669A6000E9729 /* mine_notification@2x.png */; };
+		E3A3FBEC1BC669A6000E9729 /* mine_notification@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FBE81BC669A6000E9729 /* mine_notification@3x.png */; };
 		E3B7F05D1BB23600001F4E16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05C1BB23600001F4E16 /* main.m */; };
 		E3B7F0601BB23600001F4E16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05F1BB23600001F4E16 /* AppDelegate.m */; };
 		E3B7F0631BB23600001F4E16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F0621BB23600001F4E16 /* ViewController.m */; };
@@ -428,6 +433,12 @@
 		E3A3FBDC1BBB81E6000E9729 /* JZJingXuanShopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZJingXuanShopCell.m; sourceTree = "<group>"; };
 		E3A3FBDF1BBB85DE000E9729 /* JZJingXuanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZJingXuanModel.h; sourceTree = "<group>"; };
 		E3A3FBE01BBB85DE000E9729 /* JZJingXuanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZJingXuanModel.m; sourceTree = "<group>"; };
+		E3A3FBE21BC63DDA000E9729 /* JZTabbarJXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZTabbarJXViewController.h; sourceTree = "<group>"; };
+		E3A3FBE31BC63DDA000E9729 /* JZTabbarJXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZTabbarJXViewController.m; sourceTree = "<group>"; };
+		E3A3FBE51BC669A6000E9729 /* mine_notification_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_notification_gray@2x.png"; sourceTree = "<group>"; };
+		E3A3FBE61BC669A6000E9729 /* mine_notification_gray@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_notification_gray@3x.png"; sourceTree = "<group>"; };
+		E3A3FBE71BC669A6000E9729 /* mine_notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_notification@2x.png"; sourceTree = "<group>"; };
+		E3A3FBE81BC669A6000E9729 /* mine_notification@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_notification@3x.png"; sourceTree = "<group>"; };
 		E3B7F0571BB23600001F4E16 /* nuomi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nuomi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B7F05B1BB23600001F4E16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B7F05C1BB23600001F4E16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1384,6 +1395,10 @@
 		E3B7F2211BB3A35F001F4E16 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				E3A3FBE51BC669A6000E9729 /* mine_notification_gray@2x.png */,
+				E3A3FBE61BC669A6000E9729 /* mine_notification_gray@3x.png */,
+				E3A3FBE71BC669A6000E9729 /* mine_notification@2x.png */,
+				E3A3FBE81BC669A6000E9729 /* mine_notification@3x.png */,
 				E3A3FB0C1BB536E8000E9729 /* icon_homepage_entertainmentCategory@2x.png */,
 				E3B7F2221BB3A35F001F4E16 /* icon_nav_cart_normal@2x.png */,
 				E3B7F2231BB3A360001F4E16 /* icon_nav_cart_normal@3x.png */,
@@ -1407,6 +1422,8 @@
 		E3B7F2331BB3C83D001F4E16 /* 精选 */ = {
 			isa = PBXGroup;
 			children = (
+				E3A3FBE21BC63DDA000E9729 /* JZTabbarJXViewController.h */,
+				E3A3FBE31BC63DDA000E9729 /* JZTabbarJXViewController.m */,
 			);
 			path = "精选";
 			sourceTree = "<group>";
@@ -1678,6 +1695,7 @@
 				E3A3FBC41BBA9795000E9729 /* mine_promotion_gray@2x.png in Resources */,
 				E3A3FBC01BBA9795000E9729 /* mine_order_gray@2x.png in Resources */,
 				E3A3FBAF1BBA9795000E9729 /* mine_daifukuan@3x.png in Resources */,
+				E3A3FBE91BC669A6000E9729 /* mine_notification_gray@2x.png in Resources */,
 				E3B7F1191BB393C6001F4E16 /* icon_error_network@2x.png in Resources */,
 				E3A3FB2A1BB90719000E9729 /* icon_nav_fenxiang_pressed@3x.png in Resources */,
 				E3B7F1B11BB3960F001F4E16 /* brower_next_0@2x.png in Resources */,
@@ -1692,11 +1710,13 @@
 				E3B7F1C91BB3960F001F4E16 /* greturn@2x.png in Resources */,
 				E3B7F22C1BB3A360001F4E16 /* icon_nav_cart_pressed@2x.png in Resources */,
 				E3B7F1F61BB3960F001F4E16 /* icon_nav_fanhui_pressed@2x.png in Resources */,
+				E3A3FBEC1BC669A6000E9729 /* mine_notification@3x.png in Resources */,
 				E3B7F1C81BB3960F001F4E16 /* float_close_down@3x.png in Resources */,
 				E3A3FBB61BBA9795000E9729 /* mine_money@2x.png in Resources */,
 				E3B7F13C1BB393C6001F4E16 /* icon_refresh_5@3x.png in Resources */,
 				E3A3FBB01BBA9795000E9729 /* mine_daifukuan_gray@2x.png in Resources */,
 				E3B7F12A1BB393C6001F4E16 /* icon_hud_5@3x.png in Resources */,
+				E3A3FBEB1BC669A6000E9729 /* mine_notification@2x.png in Resources */,
 				E3B7F13F1BB393C6001F4E16 /* icon_refresh_7@2x.png in Resources */,
 				E3B7F1D71BB3960F001F4E16 /* home_arrow_right_gray@3x.png in Resources */,
 				E3A3FBA81BBA9795000E9729 /* mine_card_gray@2x.png in Resources */,
@@ -1749,6 +1769,7 @@
 				E3B7F1C01BB3960F001F4E16 /* dianyingxuanzuo_21@2x.png in Resources */,
 				E3B7F1E01BB3960F001F4E16 /* icon_arrows_gray_right@2x.png in Resources */,
 				E3B7F13A1BB393C6001F4E16 /* icon_refresh_4@3x.png in Resources */,
+				E3A3FBEA1BC669A6000E9729 /* mine_notification_gray@3x.png in Resources */,
 				E3B7F1E21BB3960F001F4E16 /* icon_arrows_gray_up@2x.png in Resources */,
 				E3A3FBBD1BBA9795000E9729 /* mine_nuomiquan_gray@3x.png in Resources */,
 				E3A3FBA41BBA9795000E9729 /* mine_card.png in Resources */,
@@ -1930,6 +1951,7 @@
 				E3A3FB681BBA6510000E9729 /* JZShopPingjiaCell.m in Sources */,
 				E3A3FB5E1BBA23E3000E9729 /* JZShopRelatedModel.m in Sources */,
 				E3A3FB6B1BBA652F000E9729 /* JZShopCommentCell.m in Sources */,
+				E3A3FBE41BC63DDA000E9729 /* JZTabbarJXViewController.m in Sources */,
 				E3B7F0601BB23600001F4E16 /* AppDelegate.m in Sources */,
 				E3A3FB461BB91906000E9729 /* NSString+convertImgStr.m in Sources */,
 				E3A3FB3C1BB90D01000E9729 /* JZTopicImageCell.m in Sources */,

@@ -19,6 +19,7 @@
 #import "JZHomeBlock2Cell.h"
 #import "JZTopicViewController.h"
 #import "JZWebViewController.h"
+#import "JZCityViewController.h"
 
 @interface JZHomeViewController ()<UITableViewDataSource, UITableViewDelegate,JZAlbumDelegate,JZHomeBlock2Delegate>
 
@@ -97,6 +98,8 @@
 
 - (IBAction)OnMoreCityBtn:(id)sender {
     NSLog(@"选择城市");
+    JZCityViewController *cityVC = [[JZCityViewController alloc] init];
+    [self presentViewController: cityVC animated:YES completion:nil];
 }
 
 //获取数据

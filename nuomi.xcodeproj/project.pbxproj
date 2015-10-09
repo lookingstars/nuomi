@@ -102,6 +102,8 @@
 		E3A3FBEA1BC669A6000E9729 /* mine_notification_gray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FBE61BC669A6000E9729 /* mine_notification_gray@3x.png */; };
 		E3A3FBEB1BC669A6000E9729 /* mine_notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FBE71BC669A6000E9729 /* mine_notification@2x.png */; };
 		E3A3FBEC1BC669A6000E9729 /* mine_notification@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FBE81BC669A6000E9729 /* mine_notification@3x.png */; };
+		E3A3FBEE1BC75DE2000E9729 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FBED1BC75DE2000E9729 /* city.plist */; };
+		E3A3FBF21BC75E9A000E9729 /* JZCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FBF11BC75E9A000E9729 /* JZCityViewController.m */; };
 		E3B7F05D1BB23600001F4E16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05C1BB23600001F4E16 /* main.m */; };
 		E3B7F0601BB23600001F4E16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05F1BB23600001F4E16 /* AppDelegate.m */; };
 		E3B7F0631BB23600001F4E16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F0621BB23600001F4E16 /* ViewController.m */; };
@@ -439,6 +441,9 @@
 		E3A3FBE61BC669A6000E9729 /* mine_notification_gray@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_notification_gray@3x.png"; sourceTree = "<group>"; };
 		E3A3FBE71BC669A6000E9729 /* mine_notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_notification@2x.png"; sourceTree = "<group>"; };
 		E3A3FBE81BC669A6000E9729 /* mine_notification@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_notification@3x.png"; sourceTree = "<group>"; };
+		E3A3FBED1BC75DE2000E9729 /* city.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = city.plist; sourceTree = "<group>"; };
+		E3A3FBF01BC75E9A000E9729 /* JZCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZCityViewController.h; sourceTree = "<group>"; };
+		E3A3FBF11BC75E9A000E9729 /* JZCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZCityViewController.m; sourceTree = "<group>"; };
 		E3B7F0571BB23600001F4E16 /* nuomi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nuomi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B7F05B1BB23600001F4E16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B7F05C1BB23600001F4E16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -932,6 +937,15 @@
 			path = "精选抢购";
 			sourceTree = "<group>";
 		};
+		E3A3FBEF1BC75E9A000E9729 /* 城市 */ = {
+			isa = PBXGroup;
+			children = (
+				E3A3FBF01BC75E9A000E9729 /* JZCityViewController.h */,
+				E3A3FBF11BC75E9A000E9729 /* JZCityViewController.m */,
+			);
+			path = "城市";
+			sourceTree = "<group>";
+		};
 		E3B7F04E1BB23600001F4E16 = {
 			isa = PBXGroup;
 			children = (
@@ -971,6 +985,7 @@
 		E3B7F05A1BB23600001F4E16 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E3A3FBED1BC75DE2000E9729 /* city.plist */,
 				E3B7F05E1BB23600001F4E16 /* AppDelegate.h */,
 				E3B7F05F1BB23600001F4E16 /* AppDelegate.m */,
 				E3B7F0611BB23600001F4E16 /* ViewController.h */,
@@ -1431,6 +1446,7 @@
 		E3B7F2341BB3C83D001F4E16 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				E3A3FBEF1BC75E9A000E9729 /* 城市 */,
 				E3A3FB6F1BBA8AC7000E9729 /* 网页 */,
 				E3A3FB491BB9310E000E9729 /* 店铺详情 */,
 				E3A3FB351BB90961000E9729 /* 主题 */,
@@ -1732,6 +1748,7 @@
 				E3A3FB2B1BB90719000E9729 /* set_remind_advance@2x.png in Resources */,
 				E3B7F1431BB393C6001F4E16 /* wanzi@3x.png in Resources */,
 				E3B7F1331BB393C6001F4E16 /* icon_refresh_1@2x.png in Resources */,
+				E3A3FBEE1BC75DE2000E9729 /* city.plist in Resources */,
 				E3B7F11A1BB393C6001F4E16 /* icon_error_network@3x.png in Resources */,
 				E3B7F2131BB3960F001F4E16 /* recommend_cha@3x.png in Resources */,
 				E3B7F2311BB3A360001F4E16 /* icon_nav_saoyisao_pressed@3x.png in Resources */,
@@ -1965,6 +1982,7 @@
 				E3B7F05D1BB23600001F4E16 /* main.m in Sources */,
 				E3A3FB4C1BB93197000E9729 /* JZShopViewController.m in Sources */,
 				E3A3FB6E1BBA7127000E9729 /* JZShopSeeBuyCell.m in Sources */,
+				E3A3FBF21BC75E9A000E9729 /* JZCityViewController.m in Sources */,
 				E3B7F24A1BB3E7AB001F4E16 /* JZNetworkSingleton.m in Sources */,
 				E3A3FB621BBA2F80000E9729 /* JZShopPriceCell.m in Sources */,
 				E3A3FB431BB910AA000E9729 /* JZTopicModel.m in Sources */,

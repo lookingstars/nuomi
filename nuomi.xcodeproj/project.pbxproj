@@ -104,6 +104,8 @@
 		E3A3FBEC1BC669A6000E9729 /* mine_notification@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FBE81BC669A6000E9729 /* mine_notification@3x.png */; };
 		E3A3FBEE1BC75DE2000E9729 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FBED1BC75DE2000E9729 /* city.plist */; };
 		E3A3FBF21BC75E9A000E9729 /* JZCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FBF11BC75E9A000E9729 /* JZCityViewController.m */; };
+		E3A3FBF61BC7AEA9000E9729 /* MJChiBaoZiHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FBF51BC7AEA9000E9729 /* MJChiBaoZiHeader.m */; };
+		E3A3FBF91BC7B01D000E9729 /* JZNuomiHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FBF81BC7B01D000E9729 /* JZNuomiHeader.m */; };
 		E3B7F05D1BB23600001F4E16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05C1BB23600001F4E16 /* main.m */; };
 		E3B7F0601BB23600001F4E16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05F1BB23600001F4E16 /* AppDelegate.m */; };
 		E3B7F0631BB23600001F4E16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F0621BB23600001F4E16 /* ViewController.m */; };
@@ -444,6 +446,10 @@
 		E3A3FBED1BC75DE2000E9729 /* city.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = city.plist; sourceTree = "<group>"; };
 		E3A3FBF01BC75E9A000E9729 /* JZCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZCityViewController.h; sourceTree = "<group>"; };
 		E3A3FBF11BC75E9A000E9729 /* JZCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZCityViewController.m; sourceTree = "<group>"; };
+		E3A3FBF41BC7AEA9000E9729 /* MJChiBaoZiHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJChiBaoZiHeader.h; sourceTree = "<group>"; };
+		E3A3FBF51BC7AEA9000E9729 /* MJChiBaoZiHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJChiBaoZiHeader.m; sourceTree = "<group>"; };
+		E3A3FBF71BC7B01D000E9729 /* JZNuomiHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZNuomiHeader.h; sourceTree = "<group>"; };
+		E3A3FBF81BC7B01D000E9729 /* JZNuomiHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZNuomiHeader.m; sourceTree = "<group>"; };
 		E3B7F0571BB23600001F4E16 /* nuomi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nuomi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B7F05B1BB23600001F4E16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B7F05C1BB23600001F4E16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -946,6 +952,17 @@
 			path = "城市";
 			sourceTree = "<group>";
 		};
+		E3A3FBF31BC7AEA9000E9729 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				E3A3FBF41BC7AEA9000E9729 /* MJChiBaoZiHeader.h */,
+				E3A3FBF51BC7AEA9000E9729 /* MJChiBaoZiHeader.m */,
+				E3A3FBF71BC7B01D000E9729 /* JZNuomiHeader.h */,
+				E3A3FBF81BC7B01D000E9729 /* JZNuomiHeader.m */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
 		E3B7F04E1BB23600001F4E16 = {
 			isa = PBXGroup;
 			children = (
@@ -1074,6 +1091,7 @@
 		E3B7F08F1BB277C1001F4E16 /* 3tdParts */ = {
 			isa = PBXGroup;
 			children = (
+				E3A3FBF31BC7AEA9000E9729 /* MJRefresh */,
 			);
 			path = 3tdParts;
 			sourceTree = "<group>";
@@ -1958,6 +1976,7 @@
 				E3A3FBDD1BBB81E6000E9729 /* JZJingXuanShopCell.m in Sources */,
 				E3A3FB341BB90880000E9729 /* JZJingXuanViewController.m in Sources */,
 				E3A3FBD71BBB81B7000E9729 /* JZJingXuanVIPCell.m in Sources */,
+				E3A3FBF91BC7B01D000E9729 /* JZNuomiHeader.m in Sources */,
 				E3A3FB101BB54B4A000E9729 /* JZAlbumCell.m in Sources */,
 				E3B7F2471BB3DC04001F4E16 /* JZHomeJingxuanCell.m in Sources */,
 				E3A3FB0B1BB52BCF000E9729 /* HomeMenuCell.m in Sources */,
@@ -1985,6 +2004,7 @@
 				E3A3FBF21BC75E9A000E9729 /* JZCityViewController.m in Sources */,
 				E3B7F24A1BB3E7AB001F4E16 /* JZNetworkSingleton.m in Sources */,
 				E3A3FB621BBA2F80000E9729 /* JZShopPriceCell.m in Sources */,
+				E3A3FBF61BC7AEA9000E9729 /* MJChiBaoZiHeader.m in Sources */,
 				E3A3FB431BB910AA000E9729 /* JZTopicModel.m in Sources */,
 				E3A3FBE11BBB85DE000E9729 /* JZJingXuanModel.m in Sources */,
 				E3B7F2201BB39B97001F4E16 /* JZMenuButton.m in Sources */,

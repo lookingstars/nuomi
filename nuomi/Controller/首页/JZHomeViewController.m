@@ -20,6 +20,9 @@
 #import "JZTopicViewController.h"
 #import "JZWebViewController.h"
 #import "JZCityViewController.h"
+#import "MJRefresh.h"
+#import "MJChiBaoZiHeader.h"
+#import "JZNuomiHeader.h"
 
 @interface JZHomeViewController ()<UITableViewDataSource, UITableViewDelegate,JZAlbumDelegate,JZHomeBlock2Delegate>
 
@@ -58,9 +61,7 @@
     [self initData];
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    
-    [self getHotData];
-    [self getRecommendData];
+    [self setUpTableView];
     NSString *subStr = @"http%3A%2F%2Fhuodong.nuomi.com%2Factshow%2Fmobile%2Fcommon%2Fshort%2Fzhongqiu_manfan%3Fallcity%3D1%26key%3De492d73e8fed3aeac8a9321c94b77932%26cuid%3D11a2e62839f7bed05437dcb826be61a0c47a515c&hasshare=0&shareurl=http%3A%2F%2Fhuodong.nuomi.com%2Factshow%2Fmobile%2Fcommon%2Fshort%2Fzhongqiu_manfan_wap%3Fallcity%3D1";
     subStr = [subStr stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 //    NSLog(@"subStr :%@",subStr);
@@ -86,6 +87,20 @@
     self.bannersArray = [[NSMutableArray alloc] init];
     self.categoryArray = [[NSMutableArray alloc] init];
     self.recommendArray = [[NSMutableArray alloc] init];
+}
+
+//MJRefresh下拉刷新，跟上一个版本比，有的方法变了，具体用发要参考源码
+-(void)setUpTableView{
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
+//    self.tableView.header = [MJChiBaoZiHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableView.header = [JZNuomiHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    // 马上进入刷新状态
+    [self.tableView.header beginRefreshing];
+}
+
+-(void)loadNewData{
+    [self getHotData];
+    [self getRecommendData];
 }
 
 - (IBAction)OnSaoyisaoBtn:(UIButton *)sender {
@@ -121,10 +136,14 @@
         _topenModel = _homepageM.topten;
         
         [weakself.tableView reloadData];
+        // 拿到当前的下拉刷新控件，结束刷新状态
+        [self.tableView.header endRefreshing];
 //        NSLog(@"special===:   %@",_homepageM.special);
 //        NSLog(@"topten===:   %@",_homepageM.topten);
     } failure:^(NSError *error) {
         NSLog(@"获取 首页 数据失败");
+        // 拿到当前的下拉刷新控件，结束刷新状态
+        [self.tableView.header endRefreshing];
     }];
 }
 
@@ -141,11 +160,15 @@
             JZHomeShopModel *homeShopM = responseObject.data;
             _likeArray = homeShopM.tuan_list;
             [weakself.tableView reloadData];
+            // 拿到当前的下拉刷新控件，结束刷新状态
+            [self.tableView.header endRefreshing];
         }else{
             
         }
     } failure:^(NSError *error){
         NSLog(@"获取 猜你喜欢 数据失败");
+        // 拿到当前的下拉刷新控件，结束刷新状态
+        [self.tableView.header endRefreshing];
     }];
 }
 

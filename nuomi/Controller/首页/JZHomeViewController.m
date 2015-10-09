@@ -63,7 +63,7 @@
     [self getRecommendData];
     NSString *subStr = @"http%3A%2F%2Fhuodong.nuomi.com%2Factshow%2Fmobile%2Fcommon%2Fshort%2Fzhongqiu_manfan%3Fallcity%3D1%26key%3De492d73e8fed3aeac8a9321c94b77932%26cuid%3D11a2e62839f7bed05437dcb826be61a0c47a515c&hasshare=0&shareurl=http%3A%2F%2Fhuodong.nuomi.com%2Factshow%2Fmobile%2Fcommon%2Fshort%2Fzhongqiu_manfan_wap%3Fallcity%3D1";
     subStr = [subStr stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSLog(@"subStr :%@",subStr);
+//    NSLog(@"subStr :%@",subStr);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -210,6 +210,7 @@
         JZHomeJingxuanCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
         if (_topenModel) {
             [cell setListArray:_topenModel.list];
+            [cell setActiveTimeArray:_topenModel.activetime];
         }
         
         

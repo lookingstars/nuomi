@@ -8,10 +8,21 @@
 
 #import "JZHomeJingxuanCell.h"
 
+@interface JZHomeJingxuanCell ()
+{
+    NSTimeInterval _startTime;
+    NSTimeInterval _nowTime;
+}
+
+@end
+
 @implementation JZHomeJingxuanCell
 
 - (void)awakeFromNib {
     // Initialization code
+    self.hourLabel.layer.masksToBounds = YES;
+    self.minLabel.layer.masksToBounds = YES;
+    self.secLabel.layer.masksToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -54,5 +65,46 @@
     }
     
 }
+
+-(void)setActiveTimeArray:(NSArray *)activeTimeArray{
+    _activeTimeArray = activeTimeArray;
+    NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
+    _nowTime=[dat timeIntervalSince1970];
+    NSString *timeString = [NSString stringWithFormat:@"%.0f", _nowTime];
+    NSLog(@"=== %@",timeString);
+    for (int i = 0; i < activeTimeArray.count; i++) {
+        NSInteger endtime = [[activeTimeArray[i] objectForKey:@"starttime"] integerValue];
+        if (_nowTime < endtime) {
+            _startTime = endtime;
+            [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
+            break;
+        }
+    }
+    
+}
+
+-(void)updateUI{
+    [self performSelectorOnMainThread:@selector(setTimeLabel) withObject:nil waitUntilDone:NO];
+//    [self setTimeLabel];
+}
+
+-(void)setTimeLabel{
+    NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
+    _nowTime=[dat timeIntervalSince1970];
+    if (_startTime <= _nowTime) {
+        return;
+    }
+    NSInteger subTime = _startTime - _nowTime;
+    NSInteger hour = subTime/3600;
+    NSInteger min = (subTime%3600)/60;
+    NSInteger sec = (subTime%3600)%60;    
+    self.hourLabel.text = [NSString stringWithFormat:@"%02ld",hour];
+    self.minLabel.text = [NSString stringWithFormat:@"%02ld",min];
+    self.secLabel.text = [NSString stringWithFormat:@"%02ld",sec];
+
+}
+
+
+
 
 @end

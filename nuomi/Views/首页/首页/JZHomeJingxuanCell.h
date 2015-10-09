@@ -12,5 +12,13 @@
 
 @property (nonatomic, strong) NSArray *listArray;
 
+@property (nonatomic, strong) NSArray *activeTimeArray;
+
+@property (weak, nonatomic) IBOutlet UILabel *hourLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *minLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *secLabel;
+
 
 @end

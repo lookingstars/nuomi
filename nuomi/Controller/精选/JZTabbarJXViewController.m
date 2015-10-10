@@ -64,7 +64,7 @@
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
-    self.title = theTitle;
+//    self.title = theTitle;
     NSLog(@"shouldStartLoadWithRequest:   %@",theTitle);
     
     [_activityView startAnimating];

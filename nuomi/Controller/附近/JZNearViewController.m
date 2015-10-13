@@ -9,6 +9,7 @@
 #import "JZNearViewController.h"
 #import "JZNetworkSingleton.h"
 #import "JZNearItemModel.h"
+#import "JZNearItemCell.h"
 
 @interface JZNearViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -79,9 +80,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 60;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 10;
-}
+
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screen_width, 40)];
@@ -89,16 +88,20 @@
     return headerView;
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screen_width, 40)];
-    footerView.backgroundColor = RGB(240, 240, 240);
-    return footerView;
-}
+//-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+//    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screen_width, 40)];
+//    footerView.backgroundColor = RGB(240, 240, 240);
+//    return footerView;
+//}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellIdentifier = @"NearItemCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
+    JZNearItemCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (_dataSource.count>0) {
+        JZPoiListModel *poiM = _dataSource[indexPath.section];
+        JZNearTuanListModel *tuanListM = poiM.tuan_list[indexPath.row];
+        [cell setTuanListM:tuanListM];
+    }
     return cell;
 }
 

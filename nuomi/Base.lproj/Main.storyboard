@@ -78,13 +78,33 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="立减21元" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3q-Ne-Dpt">
+                                                    <rect key="frame" x="187" y="59" width="50" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="Uua-69-2lN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="0.98823529409999999" green="0.2901960784" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="o4N-JM-Vdr" secondAttribute="bottom" constant="3" id="4uT-rp-R0S"/>
                                                 <constraint firstItem="hyJ-Rh-9ju" firstAttribute="leading" secondItem="vjR-AZ-k6b" secondAttribute="trailing" constant="8" id="71Z-tp-EFW"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="I3q-Ne-Dpt" secondAttribute="bottom" constant="5" id="CtG-CY-mGa"/>
                                                 <constraint firstItem="ZTh-s1-fMR" firstAttribute="leading" secondItem="vjR-AZ-k6b" secondAttribute="trailing" constant="8" id="LGj-Fu-ofD"/>
                                                 <constraint firstItem="vjR-AZ-k6b" firstAttribute="leading" secondItem="5hp-97-Y6q" secondAttribute="leading" constant="8" id="ROU-7b-tC4"/>
                                                 <constraint firstItem="H3w-aQ-rhq" firstAttribute="leading" secondItem="ZTh-s1-fMR" secondAttribute="trailing" constant="9" id="SDu-eX-FRT"/>
+                                                <constraint firstItem="I3q-Ne-Dpt" firstAttribute="leading" secondItem="H3w-aQ-rhq" secondAttribute="trailing" constant="8" id="YeR-VE-gc1"/>
                                                 <constraint firstItem="hyJ-Rh-9ju" firstAttribute="top" secondItem="5hp-97-Y6q" secondAttribute="topMargin" constant="9" id="bdz-Vo-3e1"/>
                                                 <constraint firstItem="hyJ-Rh-9ju" firstAttribute="trailing" secondItem="5hp-97-Y6q" secondAttribute="trailingMargin" id="cb2-J6-itf"/>
                                                 <constraint firstItem="vjR-AZ-k6b" firstAttribute="top" secondItem="5hp-97-Y6q" secondAttribute="top" constant="10" id="chc-c2-nam"/>
@@ -93,6 +113,14 @@
                                                 <constraint firstItem="o4N-JM-Vdr" firstAttribute="trailing" secondItem="5hp-97-Y6q" secondAttribute="trailingMargin" id="sgV-os-nKk"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="shopActivityLabel" destination="I3q-Ne-Dpt" id="lH3-pU-b5Q"/>
+                                            <outlet property="shopDesLabel" destination="o4N-JM-Vdr" id="PMO-WB-9xX"/>
+                                            <outlet property="shopImageView" destination="vjR-AZ-k6b" id="aRY-p4-kNJ"/>
+                                            <outlet property="shopNewPriceLabel" destination="ZTh-s1-fMR" id="VBv-aV-HlO"/>
+                                            <outlet property="shopOldPriceLabel" destination="H3w-aQ-rhq" id="ymW-i5-2yv"/>
+                                            <outlet property="shopTitleLabel" destination="hyJ-Rh-9ju" id="5f9-sQ-t1q"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -524,10 +552,10 @@
             </objects>
             <point key="canvasLocation" x="1332.5" y="1506.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Animation Test View Controller-->
         <scene sceneID="bBs-MS-VYy">
             <objects>
-                <viewController id="Xfp-N5-aQ5" sceneMemberID="viewController">
+                <viewController id="Xfp-N5-aQ5" customClass="JZAnimationTestViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kuK-xm-1wz"/>
                         <viewControllerLayoutGuide type="bottom" id="lff-el-Mrm"/>

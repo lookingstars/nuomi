@@ -39,4 +39,27 @@
              };
 }
 
++(NSValueTransformer *)tuan_listJSONTransformer {
+    return [MTLJSONAdapter arrayTransformerWithModelClass:[JZNearTuanListModel class]];
+    
+}
+
+@end
+
+@implementation JZNearTuanListModel
+
++(NSDictionary *)JSONKeyPathsByPropertyKey{
+    return @{
+             @"deal_id":@"deal_id",
+             @"image":@"image",
+             @"brand_name":@"brand_name",
+             @"short_title":@"short_title",
+             @"groupon_price":@"groupon_price",
+             
+             @"market_price":@"market_price",
+             @"other_desc":@"other_desc",
+             @"favour_list":@"favour_list",
+             };
+}
+
 @end

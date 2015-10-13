@@ -27,3 +27,18 @@
 @property (nonatomic, strong) NSString *poi_image;
 
 @end
+
+
+@interface JZNearTuanListModel : MTLModel<MTLJSONSerializing>
+
+@property (nonatomic, strong) NSString *deal_id;
+@property (nonatomic, strong) NSString *image;
+@property (nonatomic, strong) NSString *brand_name;
+@property (nonatomic, strong) NSString *short_title;
+@property (nonatomic, strong) NSNumber *groupon_price;
+
+@property (nonatomic, strong) NSNumber *market_price;
+@property (nonatomic, strong) NSString *other_desc;
+@property (nonatomic, strong) NSDictionary *favour_list;
+
+@end

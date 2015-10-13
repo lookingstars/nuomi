@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D174033C6D68CEB91E1537D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C8EEB1E4AAC86ED2612F16 /* libPods.a */; };
+		E36837AA1BCCB9B30077DB09 /* JZAnimationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E36837A91BCCB9B30077DB09 /* JZAnimationTestViewController.m */; };
 		E3A3FB051BB4DF88000E9729 /* JZHomepageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB041BB4DF88000E9729 /* JZHomepageModel.m */; };
 		E3A3FB0B1BB52BCF000E9729 /* HomeMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB0A1BB52BCF000E9729 /* HomeMenuCell.m */; };
 		E3A3FB0D1BB536E8000E9729 /* icon_homepage_entertainmentCategory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FB0C1BB536E8000E9729 /* icon_homepage_entertainmentCategory@2x.png */; };
@@ -331,6 +332,8 @@
 		60A7A3740DF5E8ACE2C4C3E7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CF8DCC1571A5CBD90BDA4009 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D9C8EEB1E4AAC86ED2612F16 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E36837A81BCCB9B30077DB09 /* JZAnimationTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZAnimationTestViewController.h; sourceTree = "<group>"; };
+		E36837A91BCCB9B30077DB09 /* JZAnimationTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZAnimationTestViewController.m; sourceTree = "<group>"; };
 		E3A3FB031BB4DF88000E9729 /* JZHomepageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZHomepageModel.h; sourceTree = "<group>"; };
 		E3A3FB041BB4DF88000E9729 /* JZHomepageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZHomepageModel.m; sourceTree = "<group>"; };
 		E3A3FB091BB52BCF000E9729 /* HomeMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeMenuCell.h; sourceTree = "<group>"; };
@@ -765,6 +768,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E36837A71BCCB96C0077DB09 /* 搜索 */ = {
+			isa = PBXGroup;
+			children = (
+				E36837A81BCCB9B30077DB09 /* JZAnimationTestViewController.h */,
+				E36837A91BCCB9B30077DB09 /* JZAnimationTestViewController.m */,
+			);
+			path = "搜索";
+			sourceTree = "<group>";
+		};
 		E3A3FB021BB4DF79000E9729 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1054,6 +1066,7 @@
 		E3B7F08A1BB27695001F4E16 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E36837A71BCCB96C0077DB09 /* 搜索 */,
 				E3B7F2341BB3C83D001F4E16 /* 首页 */,
 				E3B7F2321BB3C83D001F4E16 /* 附近 */,
 				E3B7F2331BB3C83D001F4E16 /* 精选 */,
@@ -2021,6 +2034,7 @@
 				E3A3FB5E1BBA23E3000E9729 /* JZShopRelatedModel.m in Sources */,
 				E3A3FB6B1BBA652F000E9729 /* JZShopCommentCell.m in Sources */,
 				E3A3FBE41BC63DDA000E9729 /* JZTabbarJXViewController.m in Sources */,
+				E36837AA1BCCB9B30077DB09 /* JZAnimationTestViewController.m in Sources */,
 				E3A3FC071BCB8F36000E9729 /* JZNearItemCell.m in Sources */,
 				E3B7F0601BB23600001F4E16 /* AppDelegate.m in Sources */,
 				E3A3FB461BB91906000E9729 /* NSString+convertImgStr.m in Sources */,

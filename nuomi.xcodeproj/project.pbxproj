@@ -111,6 +111,8 @@
 		E3A3FC021BC8F8DA000E9729 /* icon_nav_sousuo_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FBFE1BC8F8DA000E9729 /* icon_nav_sousuo_normal@3x.png */; };
 		E3A3FC031BC8F8DA000E9729 /* icon_nav_sousuo_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FBFF1BC8F8DA000E9729 /* icon_nav_sousuo_pressed@2x.png */; };
 		E3A3FC041BC8F8DA000E9729 /* icon_nav_sousuo_pressed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FC001BC8F8DA000E9729 /* icon_nav_sousuo_pressed@3x.png */; };
+		E3A3FC071BCB8F36000E9729 /* JZNearItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FC061BCB8F36000E9729 /* JZNearItemCell.m */; };
+		E3A3FC0A1BCB9652000E9729 /* JZNearItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FC091BCB9652000E9729 /* JZNearItemModel.m */; };
 		E3B7F05D1BB23600001F4E16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05C1BB23600001F4E16 /* main.m */; };
 		E3B7F0601BB23600001F4E16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F05F1BB23600001F4E16 /* AppDelegate.m */; };
 		E3B7F0631BB23600001F4E16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7F0621BB23600001F4E16 /* ViewController.m */; };
@@ -461,6 +463,10 @@
 		E3A3FBFE1BC8F8DA000E9729 /* icon_nav_sousuo_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_nav_sousuo_normal@3x.png"; sourceTree = "<group>"; };
 		E3A3FBFF1BC8F8DA000E9729 /* icon_nav_sousuo_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_nav_sousuo_pressed@2x.png"; sourceTree = "<group>"; };
 		E3A3FC001BC8F8DA000E9729 /* icon_nav_sousuo_pressed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_nav_sousuo_pressed@3x.png"; sourceTree = "<group>"; };
+		E3A3FC051BCB8F36000E9729 /* JZNearItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZNearItemCell.h; sourceTree = "<group>"; };
+		E3A3FC061BCB8F36000E9729 /* JZNearItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZNearItemCell.m; sourceTree = "<group>"; };
+		E3A3FC081BCB9652000E9729 /* JZNearItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZNearItemModel.h; sourceTree = "<group>"; };
+		E3A3FC091BCB9652000E9729 /* JZNearItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZNearItemModel.m; sourceTree = "<group>"; };
 		E3B7F0571BB23600001F4E16 /* nuomi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nuomi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B7F05B1BB23600001F4E16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B7F05C1BB23600001F4E16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1502,6 +1508,8 @@
 		E3B7F2391BB3CCFE001F4E16 /* 附近 */ = {
 			isa = PBXGroup;
 			children = (
+				E3A3FC051BCB8F36000E9729 /* JZNearItemCell.h */,
+				E3A3FC061BCB8F36000E9729 /* JZNearItemCell.m */,
 			);
 			path = "附近";
 			sourceTree = "<group>";
@@ -1553,6 +1561,8 @@
 		E3B7F2511BB3F664001F4E16 /* 附近 */ = {
 			isa = PBXGroup;
 			children = (
+				E3A3FC081BCB9652000E9729 /* JZNearItemModel.h */,
+				E3A3FC091BCB9652000E9729 /* JZNearItemModel.m */,
 			);
 			path = "附近";
 			sourceTree = "<group>";
@@ -1997,6 +2007,7 @@
 				E3A3FBDD1BBB81E6000E9729 /* JZJingXuanShopCell.m in Sources */,
 				E3A3FB341BB90880000E9729 /* JZJingXuanViewController.m in Sources */,
 				E3A3FBD71BBB81B7000E9729 /* JZJingXuanVIPCell.m in Sources */,
+				E3A3FC0A1BCB9652000E9729 /* JZNearItemModel.m in Sources */,
 				E3A3FBF91BC7B01D000E9729 /* JZNuomiHeader.m in Sources */,
 				E3A3FB101BB54B4A000E9729 /* JZAlbumCell.m in Sources */,
 				E3B7F2471BB3DC04001F4E16 /* JZHomeJingxuanCell.m in Sources */,
@@ -2010,6 +2021,7 @@
 				E3A3FB5E1BBA23E3000E9729 /* JZShopRelatedModel.m in Sources */,
 				E3A3FB6B1BBA652F000E9729 /* JZShopCommentCell.m in Sources */,
 				E3A3FBE41BC63DDA000E9729 /* JZTabbarJXViewController.m in Sources */,
+				E3A3FC071BCB8F36000E9729 /* JZNearItemCell.m in Sources */,
 				E3B7F0601BB23600001F4E16 /* AppDelegate.m in Sources */,
 				E3A3FB461BB91906000E9729 /* NSString+convertImgStr.m in Sources */,
 				E3A3FB3C1BB90D01000E9729 /* JZTopicImageCell.m in Sources */,

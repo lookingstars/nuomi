@@ -130,6 +130,7 @@
                                             <outlet property="shopNewPriceLabel" destination="ZTh-s1-fMR" id="VBv-aV-HlO"/>
                                             <outlet property="shopOldPriceLabel" destination="H3w-aQ-rhq" id="ymW-i5-2yv"/>
                                             <outlet property="shopTitleLabel" destination="hyJ-Rh-9ju" id="5f9-sQ-t1q"/>
+                                            <segue destination="OvW-pp-SF4" kind="push" id="7OA-zj-cMz"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="footerCell" rowHeight="10" id="5Bn-Zs-AKM">
@@ -1883,6 +1884,6 @@
         <image name="ugc_photo" width="68" height="68"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IuZ-Fb-UuX"/>
+        <segue reference="7OA-zj-cMz"/>
     </inferredMetricsTieBreakers>
 </document>

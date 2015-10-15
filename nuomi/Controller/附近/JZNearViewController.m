@@ -120,7 +120,7 @@
     shopNameLabel.text = poiListM.poi_name;
     shopDistanceLabel.text = [NSString stringWithFormat:@"%@ %@",poiListM.bizarea_title,poiListM.poi_distance];
     if (poiListM.ugc == nil) {
-        shopUserNumLabel.text = @"暂无评分";
+        shopScoreLabel.text = @"暂无评分";
     }else{
         shopUserNumLabel.text = [NSString stringWithFormat:@"%@人评价",[poiListM.ugc objectForKey:@"user_num"]];
         shopScoreLabel.text = [NSString stringWithFormat:@"%@分",[poiListM.ugc objectForKey:@"average_score"]];

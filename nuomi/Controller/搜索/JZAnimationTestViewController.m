@@ -9,6 +9,7 @@
 #import "JZAnimationTestViewController.h"
 
 #define WIDTH 50
+#define PHOTO_HEIGHT 150
 
 @interface JZAnimationTestViewController ()
 
@@ -19,13 +20,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.view.backgroundColor = [UIColor yellowColor];
     [self drawMyLayer];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)showAlert{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"请输入8位动态密码" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil, nil];
+    alertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    [[alertView textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];
+    alertView.delegate = self;
+    alertView.tag = 10;
+    [alertView show];
 }
 
 //绘制图层

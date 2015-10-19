@@ -31,7 +31,6 @@
     [self initData];
     
     [self getMovieItemData];
-    [self getMovieData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,8 +50,12 @@
     NSString *dataStr = @"{\"cityId\":\"100010000\"}";
     [userInfo setValue:dataStr forKey:@"data"];
     JZNetworkSingleton *request = [JZNetworkSingleton request];
+    __weak typeof(self) weakself = self;
+    
     [request postDataWithURL:url params:userInfo success:^(OPDataResponse *responseObject) {
         NSLog(@"获取 最新电影 成功");
+        
+        [weakself.tableView reloadData];
     } failure:^(NSError *error) {
         NSLog(@"获取 最新电影 失败");
     }];
@@ -67,13 +70,15 @@
     [userInfo setValue:dataStr forKey:@"data"];
     JZNetworkSingleton *request = [JZNetworkSingleton request];
     request.classModel = @"JZMovieItemModel";
-    
+    __weak typeof(self) weakself = self;
     [request postDataWithURL:url params:userInfo success:^(OPDataResponse *responseObject) {
         
         _movieItemM = responseObject.data;
         if (_movieItemM !=nil) {
             _movieResultArr = [NSMutableArray arrayWithArray:_movieItemM.result];
         }
+        
+        [weakself getMovieData];
         NSLog(@"获取 附近电影城 成功");
     } failure:^(NSError *error) {
         NSLog(@"获取 附近电影城 失败");
@@ -98,7 +103,7 @@
 
 #pragma mark - **************** UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return _movieResultArr.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
@@ -106,6 +111,9 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellIdentifier = @"JZMovieItemCell";    
     JZMovieItemCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    JZMovieResultModel *resultM = _movieResultArr[indexPath.row];
+    [cell setResuleM:resultM];
     return cell;
 }
 

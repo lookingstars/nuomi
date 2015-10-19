@@ -28,15 +28,17 @@
     self.shopDistanceLabel.text = [NSString stringWithFormat:@"%@m",resuleM.distance];
     NSString *tuanStr = @"";
     if (resuleM.isSeatSelectable) {
-        [tuanStr stringByAppendingString:@"座"];
+        tuanStr = [tuanStr stringByAppendingString:@"座"];
     }
     if (resuleM.isGroupon) {
         if (resuleM.isSeatSelectable) {
-            [tuanStr stringByAppendingString:@"|"];
+            tuanStr = [tuanStr stringByAppendingString:@"|"];
         }
-        [tuanStr stringByAppendingString:@"团"];
+        tuanStr = [tuanStr stringByAppendingString:@"团"];
     }
     self.shopTuanLabel.text = tuanStr;
+    NSString *priceStr = [NSString stringWithFormat:@"￥%.2f起",[resuleM.minPrice floatValue]/100.0];
+    self.shopPriceLabel.text = priceStr;
 }
 
 @end

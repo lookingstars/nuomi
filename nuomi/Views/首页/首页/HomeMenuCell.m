@@ -182,6 +182,7 @@
 
 -(void)OnTapBtnView:(UITapGestureRecognizer *)sender{
     NSLog(@"tag:%ld",sender.view.tag);
+    [self.delegate homeMenuDidSelectedAtIndex:sender.view.tag];
 }
 
 #pragma mark - UIScrollViewDelegate

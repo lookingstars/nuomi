@@ -9,8 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "JZMenuButton.h"
 
+@protocol HomeMenuDelegate <NSObject>
+
+-(void)homeMenuDidSelectedAtIndex:(NSInteger)index;
+
+@end
 
 @interface HomeMenuCell : UITableViewCell
+
+@property (nonatomic, assign) id<HomeMenuDelegate> delegate;
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier menuArray:(NSMutableArray *)menuArray;
 

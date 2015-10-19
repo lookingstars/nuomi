@@ -24,7 +24,7 @@
 #import "MJChiBaoZiHeader.h"
 #import "JZNuomiHeader.h"
 
-@interface JZHomeViewController ()<UITableViewDataSource, UITableViewDelegate,JZAlbumDelegate,JZHomeBlock2Delegate>
+@interface JZHomeViewController ()<UITableViewDataSource, UITableViewDelegate,JZAlbumDelegate,JZHomeBlock2Delegate,HomeMenuDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
 
@@ -226,6 +226,7 @@
         if (cell == nil) {
             cell = [[HomeMenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier menuArray:_categoryArray];
         }
+        cell.delegate = self;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else if(indexPath.row == 1){
@@ -323,6 +324,11 @@
     NSString *cont = [dic objectForKey:@"cont"];
     
     [self gotoViewControllerWithType:goto_type withCont:cont];
+}
+
+#pragma mark - **************** HomeMenuDelegate
+-(void)homeMenuDidSelectedAtIndex:(NSInteger)index{
+    [self performSegueWithIdentifier:@"pushToMovie" sender:nil];
 }
 
 

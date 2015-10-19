@@ -7,6 +7,7 @@
 //
 
 #import "JZAnimationTestViewController.h"
+#import "JZNetworkSingleton.h"
 
 #define WIDTH 50
 #define PHOTO_HEIGHT 150
@@ -20,9 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor yellowColor];
-    [self drawMyLayer];
-    
+//    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = RGB(239, 239, 239);
+    [self drawImage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,6 +39,69 @@
     alertView.tag = 10;
     [alertView show];
 }
+
+//绘图
+-(void)drawImage{
+    //阴影图层
+    CALayer *layerShadow = [[CALayer alloc] init];
+    layerShadow.bounds = CGRectMake(0, 0, PHOTO_HEIGHT, PHOTO_HEIGHT);
+    layerShadow.position = CGPointMake(160, 200);
+    layerShadow.cornerRadius = PHOTO_HEIGHT/2;
+    layerShadow.shadowColor = [UIColor grayColor].CGColor;
+    layerShadow.shadowOffset = CGSizeMake(2, 1);
+    layerShadow.shadowOpacity = 1;
+    layerShadow.borderColor = [UIColor whiteColor].CGColor;
+    layerShadow.borderWidth = 2;
+//    [self.view.layer addSublayer:layerShadow];
+    
+    //自定义图层
+    CALayer *layer = [[CALayer alloc] init];
+    layer.bounds = CGRectMake(0, 0, PHOTO_HEIGHT, PHOTO_HEIGHT);
+    layer.position = CGPointMake(160, 200);
+    layer.backgroundColor = [UIColor redColor].CGColor;
+    layer.cornerRadius = PHOTO_HEIGHT/2;
+    //图层设置圆角，必须
+    layer.masksToBounds = YES;
+    //阴影效果无法和masksToBounds同时使用，因为masksToBounds的目的就是剪切外边框，
+    //而阴影效果刚好在外边框
+    //    layer.shadowColor=[UIColor grayColor].CGColor;
+    //    layer.shadowOffset=CGSizeMake(2, 2);
+    //    layer.shadowOpacity=1;
+    layer.borderColor = [UIColor whiteColor].CGColor;
+    layer.borderWidth = 2;
+    
+    //1.
+    //利用图层形变解决图像倒立问题
+//    layer.transform = CATransform3DMakeRotation(M_PI, 1, 0, 0);
+//    layer.delegate = self;
+    
+    //2.使用contents
+    UIImage *image = [UIImage imageNamed:@"detailViewDefaultMidImage"];
+    [layer setContents:(id)image.CGImage];
+    [self.view.layer addSublayer:layer];
+    
+    
+    //调用图层setNeedDisplay,否则代理方法不会被调用
+    [layer setNeedsDisplay];
+}
+
+#pragma mark 绘制图形、图像到图层，注意参数中的ctx是图层的图形上下文，其中绘图位置也是相对图层而言的
+-(void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx{
+    NSLog(@"%@",layer);
+    CGContextSaveGState(ctx);
+    
+    //图形上下文形变，解决图片倒立问题
+//    CGContextScaleCTM(ctx, 1, -1);
+//    CGContextTranslateCTM(ctx, 0, -PHOTO_HEIGHT);
+    
+    UIImage *image = [UIImage imageNamed:@"detailViewDefaultMidImage"];
+    CGContextDrawImage(ctx, CGRectMake(0, 0, PHOTO_HEIGHT, PHOTO_HEIGHT), image.CGImage);
+    
+    
+    CGContextRestoreGState(ctx);
+}
+
+
 
 //绘制图层
 -(void)drawMyLayer{

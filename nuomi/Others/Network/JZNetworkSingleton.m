@@ -68,4 +68,27 @@
     }];
 }
 
+-(void)postDataWithURL:(NSString *)url params:(NSDictionary *)userInfo success:(SuccessBlock)success failure:(FailureBlock)failure{
+    AFHTTPRequestOperationManager *manager = [self manager];
+    //申明请求的数据是json类型
+    manager.requestSerializer=[AFJSONRequestSerializer serializer];
+    
+    [manager POST:url parameters:userInfo success:^(AFHTTPRequestOperation *operation, id responseObject){
+        if (success) {
+            if (self.classModel) {
+                OPDataResponse *response = [[OPDataResponse alloc] initWithResponse:responseObject dataModleClass:[NSClassFromString(self.classModel) class] responseType:OPDataResponseTypeDefault];
+                success(response);
+            }else{
+                OPDataResponse *response = responseObject;
+                success(response);
+            }
+        }
+    } failure:^(AFHTTPRequestOperation * operation, NSError * error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+
 @end

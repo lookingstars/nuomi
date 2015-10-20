@@ -319,6 +319,10 @@
 		E3BE79751BD48A6900BAB30A /* JZMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3BE79741BD48A6900BAB30A /* JZMovieViewController.m */; };
 		E3BE79791BD48FFD00BAB30A /* JZMovieItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3BE79781BD48FFD00BAB30A /* JZMovieItemCell.m */; };
 		E3BE797D1BD4951800BAB30A /* JZMovieItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3BE797C1BD4951800BAB30A /* JZMovieItemModel.m */; };
+		E3BE79831BD4C51600BAB30A /* ImageScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3BE79801BD4C51600BAB30A /* ImageScrollCell.m */; };
+		E3BE79841BD4C51600BAB30A /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3BE79821BD4C51600BAB30A /* ImageScrollView.m */; };
+		E3BE79871BD6237800BAB30A /* JZMovieAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3BE79861BD6237800BAB30A /* JZMovieAlbumCell.m */; };
+		E3BE798A1BD625B300BAB30A /* JZMovieCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3BE79891BD625B300BAB30A /* JZMovieCardModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -717,6 +721,14 @@
 		E3BE79781BD48FFD00BAB30A /* JZMovieItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZMovieItemCell.m; sourceTree = "<group>"; };
 		E3BE797B1BD4951800BAB30A /* JZMovieItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZMovieItemModel.h; sourceTree = "<group>"; };
 		E3BE797C1BD4951800BAB30A /* JZMovieItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZMovieItemModel.m; sourceTree = "<group>"; };
+		E3BE797F1BD4C51600BAB30A /* ImageScrollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollCell.h; sourceTree = "<group>"; };
+		E3BE79801BD4C51600BAB30A /* ImageScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollCell.m; sourceTree = "<group>"; };
+		E3BE79811BD4C51600BAB30A /* ImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollView.h; sourceTree = "<group>"; };
+		E3BE79821BD4C51600BAB30A /* ImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollView.m; sourceTree = "<group>"; };
+		E3BE79851BD6237800BAB30A /* JZMovieAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZMovieAlbumCell.h; sourceTree = "<group>"; };
+		E3BE79861BD6237800BAB30A /* JZMovieAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZMovieAlbumCell.m; sourceTree = "<group>"; };
+		E3BE79881BD625B300BAB30A /* JZMovieCardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZMovieCardModel.h; sourceTree = "<group>"; };
+		E3BE79891BD625B300BAB30A /* JZMovieCardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZMovieCardModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1130,6 +1142,7 @@
 		E3B7F08F1BB277C1001F4E16 /* 3tdParts */ = {
 			isa = PBXGroup;
 			children = (
+				E3BE797E1BD4C51600BAB30A /* LoopView */,
 				E3A3FBF31BC7AEA9000E9729 /* MJRefresh */,
 			);
 			path = 3tdParts;
@@ -1639,6 +1652,8 @@
 		E3BE79761BD48FDE00BAB30A /* 电影 */ = {
 			isa = PBXGroup;
 			children = (
+				E3BE79851BD6237800BAB30A /* JZMovieAlbumCell.h */,
+				E3BE79861BD6237800BAB30A /* JZMovieAlbumCell.m */,
 				E3BE79771BD48FFD00BAB30A /* JZMovieItemCell.h */,
 				E3BE79781BD48FFD00BAB30A /* JZMovieItemCell.m */,
 			);
@@ -1650,8 +1665,21 @@
 			children = (
 				E3BE797B1BD4951800BAB30A /* JZMovieItemModel.h */,
 				E3BE797C1BD4951800BAB30A /* JZMovieItemModel.m */,
+				E3BE79881BD625B300BAB30A /* JZMovieCardModel.h */,
+				E3BE79891BD625B300BAB30A /* JZMovieCardModel.m */,
 			);
 			path = "电影";
+			sourceTree = "<group>";
+		};
+		E3BE797E1BD4C51600BAB30A /* LoopView */ = {
+			isa = PBXGroup;
+			children = (
+				E3BE797F1BD4C51600BAB30A /* ImageScrollCell.h */,
+				E3BE79801BD4C51600BAB30A /* ImageScrollCell.m */,
+				E3BE79811BD4C51600BAB30A /* ImageScrollView.h */,
+				E3BE79821BD4C51600BAB30A /* ImageScrollView.m */,
+			);
+			path = LoopView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2073,6 +2101,7 @@
 				E3A3FB5E1BBA23E3000E9729 /* JZShopRelatedModel.m in Sources */,
 				E3A3FB6B1BBA652F000E9729 /* JZShopCommentCell.m in Sources */,
 				E3A3FBE41BC63DDA000E9729 /* JZTabbarJXViewController.m in Sources */,
+				E3BE79841BD4C51600BAB30A /* ImageScrollView.m in Sources */,
 				E3BE79751BD48A6900BAB30A /* JZMovieViewController.m in Sources */,
 				E36837AA1BCCB9B30077DB09 /* JZAnimationTestViewController.m in Sources */,
 				E3A3FC071BCB8F36000E9729 /* JZNearItemCell.m in Sources */,
@@ -2082,6 +2111,7 @@
 				E3A3FB3C1BB90D01000E9729 /* JZTopicImageCell.m in Sources */,
 				E3A3FB721BBA8AE4000E9729 /* JZWebViewController.m in Sources */,
 				E3B7F2381BB3C866001F4E16 /* JZHomeViewController.m in Sources */,
+				E3BE79831BD4C51600BAB30A /* ImageScrollCell.m in Sources */,
 				E3A3FB381BB9097B000E9729 /* JZTopicViewController.m in Sources */,
 				E3A3FB651BBA5F6C000E9729 /* JZShopNoticeCell.m in Sources */,
 				E3B7F2411BB3CE8C001F4E16 /* JZHomeShopCell.m in Sources */,
@@ -2097,8 +2127,10 @@
 				E3A3FB431BB910AA000E9729 /* JZTopicModel.m in Sources */,
 				E3A3FBE11BBB85DE000E9729 /* JZJingXuanModel.m in Sources */,
 				E3B7F2201BB39B97001F4E16 /* JZMenuButton.m in Sources */,
+				E3BE79871BD6237800BAB30A /* JZMovieAlbumCell.m in Sources */,
 				E3A3FB5B1BBA228F000E9729 /* JZShopCommentModel.m in Sources */,
 				E3BE79791BD48FFD00BAB30A /* JZMovieItemCell.m in Sources */,
+				E3BE798A1BD625B300BAB30A /* JZMovieCardModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

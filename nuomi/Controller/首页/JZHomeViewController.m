@@ -65,6 +65,13 @@
     NSString *subStr = @"http%3A%2F%2Fhuodong.nuomi.com%2Factshow%2Fmobile%2Fcommon%2Fshort%2Fzhongqiu_manfan%3Fallcity%3D1%26key%3De492d73e8fed3aeac8a9321c94b77932%26cuid%3D11a2e62839f7bed05437dcb826be61a0c47a515c&hasshare=0&shareurl=http%3A%2F%2Fhuodong.nuomi.com%2Factshow%2Fmobile%2Fcommon%2Fshort%2Fzhongqiu_manfan_wap%3Fallcity%3D1";
     subStr = [subStr stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 //    NSLog(@"subStr :%@",subStr);
+    
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(HideKeyboard)];
+//    [self.view addGestureRecognizer:tap];
+}
+
+-(void)HideKeyboard{
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,6 +81,11 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.view endEditing:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -127,6 +139,10 @@
     __weak typeof(self) weakself = self;
     [request getDataWithURL:url params:nil success:^(OPDataResponse *responseObject) {
         NSLog(@"获取 首页 数据成功");
+        if (responseObject.error) {
+            NSLog(@"error:  %@",responseObject.error);
+            return ;
+        }
         _homepageM = responseObject.data;
         
         _bannersArray = [[NSMutableArray alloc] initWithArray:_homepageM.banners];
@@ -156,6 +172,10 @@
     __weak typeof(self) weakself = self;
     [request getDataWithURL:url params:nil success:^(OPDataResponse *responseObject){
         NSLog(@"获取 猜你喜欢 数据成功");
+        if (responseObject.error) {
+            NSLog(@"error:  %@",responseObject.error);
+            return ;
+        }
         if (responseObject.code == 0) {
             JZHomeShopModel *homeShopM = responseObject.data;
             _likeArray = homeShopM.tuan_list;

@@ -51,6 +51,10 @@
     __weak typeof(self) weakself = self;
     [request getDataWithURL:url params:nil success:^(OPDataResponse *responseObject) {
         NSLog(@"请求 数据成功");
+        if (responseObject.error) {
+            NSLog(@"error:  %@",responseObject.error);
+            return ;
+        }
         _jingxuanM = responseObject.data;
         if (_jingxuanM) {
             _dataSource = [NSMutableArray arrayWithArray:_jingxuanM.list];

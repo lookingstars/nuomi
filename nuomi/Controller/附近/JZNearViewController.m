@@ -103,7 +103,7 @@
     shopScoreLabel.textColor = RGB(254, 208, 55);
     [headerView addSubview:shopScoreLabel];
     //评价
-    UILabel *shopUserNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(shopScoreLabel.frame)+10, 35, 60, 20)];
+    UILabel *shopUserNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(shopScoreLabel.frame)+10, 35, 90, 20)];
     shopUserNumLabel.font = [UIFont systemFontOfSize:13];
     shopUserNumLabel.textColor = [UIColor lightGrayColor];
     [headerView addSubview:shopUserNumLabel];

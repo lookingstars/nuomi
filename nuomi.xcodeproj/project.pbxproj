@@ -323,6 +323,8 @@
 		E3BE79841BD4C51600BAB30A /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3BE79821BD4C51600BAB30A /* ImageScrollView.m */; };
 		E3BE79871BD6237800BAB30A /* JZMovieAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3BE79861BD6237800BAB30A /* JZMovieAlbumCell.m */; };
 		E3BE798A1BD625B300BAB30A /* JZMovieCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3BE79891BD625B300BAB30A /* JZMovieCardModel.m */; };
+		E3E3E3D91BD888F6001C9993 /* ico_make.png in Resources */ = {isa = PBXBuildFile; fileRef = E3E3E3D61BD888F6001C9993 /* ico_make.png */; };
+		E3E3E3DA1BD888F6001C9993 /* JSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E3E3D81BD888F6001C9993 /* JSDropDownMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -729,6 +731,9 @@
 		E3BE79861BD6237800BAB30A /* JZMovieAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZMovieAlbumCell.m; sourceTree = "<group>"; };
 		E3BE79881BD625B300BAB30A /* JZMovieCardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZMovieCardModel.h; sourceTree = "<group>"; };
 		E3BE79891BD625B300BAB30A /* JZMovieCardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZMovieCardModel.m; sourceTree = "<group>"; };
+		E3E3E3D61BD888F6001C9993 /* ico_make.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_make.png; sourceTree = "<group>"; };
+		E3E3E3D71BD888F6001C9993 /* JSDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDropDownMenu.h; sourceTree = "<group>"; };
+		E3E3E3D81BD888F6001C9993 /* JSDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSDropDownMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1142,6 +1147,7 @@
 		E3B7F08F1BB277C1001F4E16 /* 3tdParts */ = {
 			isa = PBXGroup;
 			children = (
+				E3E3E3D51BD888F6001C9993 /* JSDropDownMenu */,
 				E3BE797E1BD4C51600BAB30A /* LoopView */,
 				E3A3FBF31BC7AEA9000E9729 /* MJRefresh */,
 			);
@@ -1682,6 +1688,16 @@
 			path = LoopView;
 			sourceTree = "<group>";
 		};
+		E3E3E3D51BD888F6001C9993 /* JSDropDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E3E3E3D61BD888F6001C9993 /* ico_make.png */,
+				E3E3E3D71BD888F6001C9993 /* JSDropDownMenu.h */,
+				E3E3E3D81BD888F6001C9993 /* JSDropDownMenu.m */,
+			);
+			path = JSDropDownMenu;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1889,6 +1905,7 @@
 				E3A3FB531BB93BDE000E9729 /* detailViewNotFavRed@2x.png in Resources */,
 				E3B7F1371BB393C6001F4E16 /* icon_refresh_3@2x.png in Resources */,
 				E3B7F1DB1BB3960F001F4E16 /* ic_order_insurance@3x.png in Resources */,
+				E3E3E3D91BD888F6001C9993 /* ico_make.png in Resources */,
 				E3A3FB2C1BB90719000E9729 /* set_remind_advance@3x.png in Resources */,
 				E3A3FBB31BBA9795000E9729 /* mine_hongbao@3x.png in Resources */,
 				E3B7F1BA1BB3960F001F4E16 /* detailViewBackRed@3x.png in Resources */,
@@ -2126,6 +2143,7 @@
 				E3A3FBF61BC7AEA9000E9729 /* MJChiBaoZiHeader.m in Sources */,
 				E3A3FB431BB910AA000E9729 /* JZTopicModel.m in Sources */,
 				E3A3FBE11BBB85DE000E9729 /* JZJingXuanModel.m in Sources */,
+				E3E3E3DA1BD888F6001C9993 /* JSDropDownMenu.m in Sources */,
 				E3B7F2201BB39B97001F4E16 /* JZMenuButton.m in Sources */,
 				E3BE79871BD6237800BAB30A /* JZMovieAlbumCell.m in Sources */,
 				E3A3FB5B1BBA228F000E9729 /* JZShopCommentModel.m in Sources */,

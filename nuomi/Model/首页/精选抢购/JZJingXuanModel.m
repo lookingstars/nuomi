@@ -39,7 +39,7 @@
              @"medium_title":@"medium_title",
              
              @"distance":@"distance",
-             @"ugc_score":@"ugc_score",
+//             @"ugc_score":@"ugc_score",
              @"store_num":@"store_num"
              };
 }

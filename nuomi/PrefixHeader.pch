@@ -17,6 +17,7 @@
 #import "Constant.h"
 #import "UIImageView+WebCache.h"
 #import "NSString+convertImgStr.h"
+#import "SVProgressHUD.h"
 
 
 #endif

@@ -27,7 +27,7 @@
     self.shopNamaLabel.text = listM.brand;
     self.shopDesLabel.text = listM.medium_title;
     self.shopDistanceLabel.text = listM.distance;
-    self.shopScoreLabel.text = [NSString stringWithFormat:@"%@分 售%@份",listM.ugc_score,listM.store_num];
+//    self.shopScoreLabel.text = [NSString stringWithFormat:@"%@分 售%@份",listM.ugc_score,listM.store_num];
     self.shopNewPriceLabel.text = [NSString stringWithFormat:@"￥%ld",[listM.current_price integerValue]/100];
 }
 

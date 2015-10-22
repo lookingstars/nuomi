@@ -374,7 +374,7 @@
     }else if (type == 6){
         
     }else if (type == 7){
-        
+        [self showSuccessHUD:cont];        
     }else if (type == 8){
         //http://
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -388,6 +388,14 @@
     }
     
     
+}
+
+-(void)showSuccessHUD:(NSString *)string{
+    [SVProgressHUD showInfoWithStatus:string];
+}
+
+-(void)showErrorHUD:(NSString *)string{
+    [SVProgressHUD showErrorWithStatus:string];
 }
 
 /*

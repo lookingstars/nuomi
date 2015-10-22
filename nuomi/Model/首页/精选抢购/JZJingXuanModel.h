@@ -27,7 +27,7 @@
 @property (nonatomic, strong) NSString *medium_title;
 
 @property (nonatomic, strong) NSString *distance;
-@property (nonatomic, strong) NSString *ugc_score;
+//@property (nonatomic, strong) NSString *ugc_score;
 @property (nonatomic, strong) NSNumber *store_num;
 
 @end

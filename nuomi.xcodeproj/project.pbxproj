@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D174033C6D68CEB91E1537D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C8EEB1E4AAC86ED2612F16 /* libPods.a */; };
 		E36837AA1BCCB9B30077DB09 /* JZAnimationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E36837A91BCCB9B30077DB09 /* JZAnimationTestViewController.m */; };
+		E39714C91BD8E1990084C0C1 /* JZScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E39714C81BD8E1990084C0C1 /* JZScanViewController.m */; };
+		E3A1DF2C1BD9FC7200C4E66F /* qrcode_scan_bg_Green_iphone5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A1DF2B1BD9FC7200C4E66F /* qrcode_scan_bg_Green_iphone5@2x.png */; };
 		E3A3FB051BB4DF88000E9729 /* JZHomepageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB041BB4DF88000E9729 /* JZHomepageModel.m */; };
 		E3A3FB0B1BB52BCF000E9729 /* HomeMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A3FB0A1BB52BCF000E9729 /* HomeMenuCell.m */; };
 		E3A3FB0D1BB536E8000E9729 /* icon_homepage_entertainmentCategory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A3FB0C1BB536E8000E9729 /* icon_homepage_entertainmentCategory@2x.png */; };
@@ -140,7 +142,6 @@
 		E3B7F0D11BB27822001F4E16 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7F0BD1BB27822001F4E16 /* libWeChatSDK.a */; };
 		E3B7F0D61BB27BDF001F4E16 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7F0D51BB27BDF001F4E16 /* libz.dylib */; };
 		E3B7F0D81BB27CEF001F4E16 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7F0D71BB27CEF001F4E16 /* Security.framework */; };
-		E3B7F0DA1BB27CFC001F4E16 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7F0D91BB27CFC001F4E16 /* libiconv.dylib */; };
 		E3B7F0DC1BB27D09001F4E16 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7F0DB1BB27D09001F4E16 /* SystemConfiguration.framework */; };
 		E3B7F0DE1BB27D15001F4E16 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7F0DD1BB27D15001F4E16 /* CoreGraphics.framework */; };
 		E3B7F0E01BB27D24001F4E16 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7F0DF1BB27D24001F4E16 /* libsqlite3.dylib */; };
@@ -325,6 +326,11 @@
 		E3BE798A1BD625B300BAB30A /* JZMovieCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3BE79891BD625B300BAB30A /* JZMovieCardModel.m */; };
 		E3E3E3D91BD888F6001C9993 /* ico_make.png in Resources */ = {isa = PBXBuildFile; fileRef = E3E3E3D61BD888F6001C9993 /* ico_make.png */; };
 		E3E3E3DA1BD888F6001C9993 /* JSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E3E3D81BD888F6001C9993 /* JSDropDownMenu.m */; };
+		E3E3E3FF1BD8B45E001C9993 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E3E3FE1BD8B45E001C9993 /* AVFoundation.framework */; };
+		E3E3E4011BD8B46C001C9993 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E3E4001BD8B46C001C9993 /* CoreMedia.framework */; };
+		E3E3E4031BD8B476001C9993 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E3E4021BD8B476001C9993 /* CoreVideo.framework */; };
+		E3E3E4051BD8B484001C9993 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E3E4041BD8B484001C9993 /* QuartzCore.framework */; };
+		E3E3E4061BD8BEF8001C9993 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7F0D91BB27CFC001F4E16 /* libiconv.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -343,6 +349,9 @@
 		D9C8EEB1E4AAC86ED2612F16 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36837A81BCCB9B30077DB09 /* JZAnimationTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZAnimationTestViewController.h; sourceTree = "<group>"; };
 		E36837A91BCCB9B30077DB09 /* JZAnimationTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZAnimationTestViewController.m; sourceTree = "<group>"; };
+		E39714C71BD8E1990084C0C1 /* JZScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZScanViewController.h; sourceTree = "<group>"; };
+		E39714C81BD8E1990084C0C1 /* JZScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZScanViewController.m; sourceTree = "<group>"; };
+		E3A1DF2B1BD9FC7200C4E66F /* qrcode_scan_bg_Green_iphone5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qrcode_scan_bg_Green_iphone5@2x.png"; sourceTree = "<group>"; };
 		E3A3FB031BB4DF88000E9729 /* JZHomepageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZHomepageModel.h; sourceTree = "<group>"; };
 		E3A3FB041BB4DF88000E9729 /* JZHomepageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZHomepageModel.m; sourceTree = "<group>"; };
 		E3A3FB091BB52BCF000E9729 /* HomeMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeMenuCell.h; sourceTree = "<group>"; };
@@ -734,6 +743,10 @@
 		E3E3E3D61BD888F6001C9993 /* ico_make.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_make.png; sourceTree = "<group>"; };
 		E3E3E3D71BD888F6001C9993 /* JSDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDropDownMenu.h; sourceTree = "<group>"; };
 		E3E3E3D81BD888F6001C9993 /* JSDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSDropDownMenu.m; sourceTree = "<group>"; };
+		E3E3E3FE1BD8B45E001C9993 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E3E3E4001BD8B46C001C9993 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		E3E3E4021BD8B476001C9993 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		E3E3E4041BD8B484001C9993 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -741,12 +754,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E3E4061BD8BEF8001C9993 /* libiconv.dylib in Frameworks */,
+				E3E3E4051BD8B484001C9993 /* QuartzCore.framework in Frameworks */,
+				E3E3E4031BD8B476001C9993 /* CoreVideo.framework in Frameworks */,
+				E3E3E4011BD8B46C001C9993 /* CoreMedia.framework in Frameworks */,
+				E3E3E3FF1BD8B45E001C9993 /* AVFoundation.framework in Frameworks */,
 				E3B7F0E41BB27D38001F4E16 /* libstdc++.dylib in Frameworks */,
 				E3B7F0E21BB27D2D001F4E16 /* CoreTelephony.framework in Frameworks */,
 				E3B7F0E01BB27D24001F4E16 /* libsqlite3.dylib in Frameworks */,
 				E3B7F0DE1BB27D15001F4E16 /* CoreGraphics.framework in Frameworks */,
 				E3B7F0DC1BB27D09001F4E16 /* SystemConfiguration.framework in Frameworks */,
-				E3B7F0DA1BB27CFC001F4E16 /* libiconv.dylib in Frameworks */,
 				E3B7F0D81BB27CEF001F4E16 /* Security.framework in Frameworks */,
 				E3B7F0D61BB27BDF001F4E16 /* libz.dylib in Frameworks */,
 				E3B7F0D11BB27822001F4E16 /* libWeChatSDK.a in Frameworks */,
@@ -772,6 +789,10 @@
 		26D5EAC2DED3B73E77E0220D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E3E3E4041BD8B484001C9993 /* QuartzCore.framework */,
+				E3E3E4021BD8B476001C9993 /* CoreVideo.framework */,
+				E3E3E4001BD8B46C001C9993 /* CoreMedia.framework */,
+				E3E3E3FE1BD8B45E001C9993 /* AVFoundation.framework */,
 				E3B7F0E31BB27D38001F4E16 /* libstdc++.dylib */,
 				E3B7F0E11BB27D2D001F4E16 /* CoreTelephony.framework */,
 				E3B7F0DF1BB27D24001F4E16 /* libsqlite3.dylib */,
@@ -1298,6 +1319,7 @@
 		E3B7F0E81BB3925F001F4E16 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E3A1DF2B1BD9FC7200C4E66F /* qrcode_scan_bg_Green_iphone5@2x.png */,
 				E3A3FB731BBA9795000E9729 /* 我的 */,
 				E3A3FB141BB90719000E9729 /* 精选抢购 */,
 				E3B7F2211BB3A35F001F4E16 /* 首页 */,
@@ -1536,6 +1558,8 @@
 				E3A3FB311BB90880000E9729 /* 精选抢购 */,
 				E3B7F2361BB3C866001F4E16 /* JZHomeViewController.h */,
 				E3B7F2371BB3C866001F4E16 /* JZHomeViewController.m */,
+				E39714C71BD8E1990084C0C1 /* JZScanViewController.h */,
+				E39714C81BD8E1990084C0C1 /* JZScanViewController.m */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -1804,6 +1828,7 @@
 				E3A3FB271BB90719000E9729 /* icon_nav_fenxiang_normal@2x.png in Resources */,
 				E3B7F1291BB393C6001F4E16 /* icon_hud_5@2x.png in Resources */,
 				E3A3FBC21BBA9795000E9729 /* mine_promotion@2x.png in Resources */,
+				E3A1DF2C1BD9FC7200C4E66F /* qrcode_scan_bg_Green_iphone5@2x.png in Resources */,
 				E3B7F1B61BB3960F001F4E16 /* citySelectArrow@3x.png in Resources */,
 				E3A3FBC61BBA9795000E9729 /* mine_setting@2x.png in Resources */,
 				E3B7F2001BB3960F001F4E16 /* icon_web_goback_dis@2x.png in Resources */,
@@ -2100,6 +2125,7 @@
 				E3A3FB581BBA2134000E9729 /* JZShopDetailModel.m in Sources */,
 				E3B7F0631BB23600001F4E16 /* ViewController.m in Sources */,
 				E3A3FBDA1BBB81D3000E9729 /* JZJingXuanBtnCell.m in Sources */,
+				E39714C91BD8E1990084C0C1 /* JZScanViewController.m in Sources */,
 				E3A3FB051BB4DF88000E9729 /* JZHomepageModel.m in Sources */,
 				E3A3FBDD1BBB81E6000E9729 /* JZJingXuanShopCell.m in Sources */,
 				E3A3FB341BB90880000E9729 /* JZJingXuanViewController.m in Sources */,
@@ -2283,6 +2309,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 60A7A3740DF5E8ACE2C4C3E7 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2290,7 +2317,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/nuomi/PrefixHeader.pch";
 				INFOPLIST_FILE = nuomi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2298,9 +2325,14 @@
 					"$(PROJECT_DIR)/nuomi/Others/Library/UMSocial_Sdk_4.2.3",
 					"$(PROJECT_DIR)/nuomi/Others/Library/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/nuomi/Others/Library/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/nuomi/Others/3tdParts/ZBarSDK",
+					"$(PROJECT_DIR)/nuomi/Others/ZBarSDK",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -2308,6 +2340,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CF8DCC1571A5CBD90BDA4009 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2315,7 +2348,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/nuomi/PrefixHeader.pch";
 				INFOPLIST_FILE = nuomi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2323,9 +2356,13 @@
 					"$(PROJECT_DIR)/nuomi/Others/Library/UMSocial_Sdk_4.2.3",
 					"$(PROJECT_DIR)/nuomi/Others/Library/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/nuomi/Others/Library/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/nuomi/Others/3tdParts/ZBarSDK",
+					"$(PROJECT_DIR)/nuomi/Others/ZBarSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};

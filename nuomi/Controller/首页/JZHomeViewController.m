@@ -23,6 +23,8 @@
 #import "MJRefresh.h"
 #import "MJChiBaoZiHeader.h"
 #import "JZNuomiHeader.h"
+#import "JZScanViewController.h"
+//#import "ZBarSDK.h"
 
 @interface JZHomeViewController ()<UITableViewDataSource, UITableViewDelegate,JZAlbumDelegate,JZHomeBlock2Delegate,HomeMenuDelegate>
 
@@ -117,7 +119,22 @@
 
 - (IBAction)OnSaoyisaoBtn:(UIButton *)sender {
     NSLog(@"扫一扫");
+//    [self scan];
+    JZScanViewController *scanVC = [[JZScanViewController alloc] init];
+    [self presentViewController:scanVC animated:YES completion:nil];
+    
 }
+
+//ZBarReaderViewController方法
+-(void)scan{
+//    ZBarReaderViewController *reader = [[ZBarReaderViewController alloc] init];
+////    reader.readerDelegate = self;
+//    [reader.scanner setSymbology:ZBAR_QRCODE config:ZBAR_CFG_ENABLE to:0];
+//    reader.readerView.zoom = 1.0;
+//    
+//    [self presentViewController:reader animated:YES completion:nil];
+}
+
 
 - (IBAction)OnGouwucheBtn:(UIButton *)sender {
     NSLog(@"购物车");
@@ -397,6 +414,15 @@
 -(void)showErrorHUD:(NSString *)string{
     [SVProgressHUD showErrorWithStatus:string];
 }
+
+
+#pragma mark - **************** ZBarReaderDelegate
+//-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+//    id<NSFastEnumeration> results = [info objectForKey:ZBarReaderControllerResults];
+//    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+//    [picker dismissModalViewControllerAnimated:YES];
+//}
+
 
 /*
 #pragma mark - Navigation

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "nuomi/Controller/&#x9996;&#x9875;/JZHomeViewController.m"
-            timestampString = "467024938.099716"
+            timestampString = "467198574.759918"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "-viewWillDisappear:"
             landmarkType = "5">
          </BreakpointContent>

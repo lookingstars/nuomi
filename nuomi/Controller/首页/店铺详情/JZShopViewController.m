@@ -42,14 +42,27 @@
     
     self.navigationController.navigationBarHidden = NO;
     
-    [self requestItemDetail];
-    [self requestComment];
-    [self requestRelatedData];
+    [self setUpTableView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//MJRefresh下拉刷新，跟上一个版本比，有的方法变了，具体用发要参考源码
+-(void)setUpTableView{
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
+    //    self.tableView.header = [MJChiBaoZiHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableView.header = [JZNuomiHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    // 马上进入刷新状态
+    [self.tableView.header beginRefreshing];
+}
+
+-(void)loadNewData{
+    [self requestItemDetail];
+    [self requestComment];
+    [self requestRelatedData];
 }
 
 -(void)requestItemDetail {
@@ -61,12 +74,20 @@
     
     [request getDataWithURL:url params:nil success:^(OPDataResponse *responseObject) {
         NSLog(@"请求 店铺详情 成功");
+        if (responseObject.error) {
+            NSLog(@"error:  %@",responseObject.error);
+            [SVProgressHUD showInfoWithStatus:responseObject.error.description];
+            [self.tableView.header endRefreshing];
+            return ;
+        }
         _shopDetailM = responseObject.data;
         
         [weakself setItemDetailData];
         [weakself reloadData];
     } failure:^(NSError *error) {
         NSLog(@"请求 店铺详情 失败");
+        [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
+        [self.tableView.header endRefreshing];
     }];
 }
 
@@ -86,11 +107,19 @@
     
     [request getDataWithURL:url params:nil success:^(OPDataResponse *responseObject) {
         NSLog(@"请求 评论 成功");
+        if (responseObject.error) {
+            NSLog(@"error:  %@",responseObject.error);
+            [SVProgressHUD showInfoWithStatus:responseObject.error.description];
+            [self.tableView.header endRefreshing];
+            return ;
+        }
         _shopCommentM = responseObject.data;
         
         [weakself reloadData];
     } failure:^(NSError *error) {
         NSLog(@"请求 评论 失败");
+        [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
+        [self.tableView.header endRefreshing];
     }];
 }
 
@@ -103,18 +132,27 @@
     
     [request getDataWithURL:url params:nil success:^(OPDataResponse *responseObject) {
         NSLog(@"请求 热门推荐 成功");
+        if (responseObject.error) {
+            NSLog(@"error:  %@",responseObject.error);
+            [SVProgressHUD showInfoWithStatus:responseObject.error.description];
+            [self.tableView.header endRefreshing];
+            return ;
+        }
         _shopRelatedM = responseObject.data;
         
         
         [weakself reloadData];
     } failure:^(NSError *error) {
         NSLog(@"请求 热门推荐 失败");
+        [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
+        [self.tableView.header endRefreshing];
     }];
 }
 
 -(void)reloadData{
     if (_shopDetailM != nil && _shopCommentM != nil && _shopRelatedM != nil) {
         [self.tableView reloadData];
+        [self.tableView.header endRefreshing];
     }
 }
 

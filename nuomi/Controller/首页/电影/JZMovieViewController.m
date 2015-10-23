@@ -14,6 +14,8 @@
 #import "JZWebViewController.h"
 #import "JZMovieAlbumCell.h"
 #import "JZMovieCardModel.h"
+#import "MJRefresh.h"
+#import "JZNuomiHeader.h"
 
 @interface JZMovieViewController ()<UITableViewDataSource,UITableViewDelegate,ImageScrollViewDelegate,JZMovieAlbumDelegate>
 
@@ -38,8 +40,8 @@
     self.navigationController.navigationBarHidden = NO;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    [self initData];    
-    [self getMovieItemData];
+    [self initData];
+    [self setUpTableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,6 +53,19 @@
     _movieResultArr = [[NSMutableArray alloc] init];
     _adListArray = [[NSMutableArray alloc] init];
     _movieListArray = [[NSMutableArray alloc] init];
+}
+
+//MJRefresh下拉刷新，跟上一个版本比，有的方法变了，具体用发要参考源码
+-(void)setUpTableView{
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
+    //    self.tableView.header = [MJChiBaoZiHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableView.header = [JZNuomiHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    // 马上进入刷新状态
+    [self.tableView.header beginRefreshing];
+}
+
+-(void)loadNewData{
+    [self getMovieItemData];
 }
 
 /**< 获取最新电影 */
@@ -67,14 +82,23 @@
     
     [request postDataWithURL:url params:userInfo success:^(OPDataResponse *responseObject) {
         NSLog(@"获取 最新电影 成功");
+        if (responseObject.error) {
+            NSLog(@"error:  %@",responseObject.error);
+            [SVProgressHUD showInfoWithStatus:responseObject.error.description];
+            [self.tableView.header endRefreshing];
+            return ;
+        }
         JZMovieCardModel *movieCardM = responseObject.data;
         if (movieCardM == nil) {
             return ;
         }
         _movieListArray = [NSMutableArray arrayWithArray:movieCardM.result];
         [weakself.tableView reloadData];
+        [self.tableView.header endRefreshing];
     } failure:^(NSError *error) {
         NSLog(@"获取 最新电影 失败");
+        [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
+        [self.tableView.header endRefreshing];
     }];
 }
 
@@ -89,7 +113,12 @@
     request.classModel = @"JZMovieItemModel";
     __weak typeof(self) weakself = self;
     [request postDataWithURL:url params:userInfo success:^(OPDataResponse *responseObject) {
-        
+        if (responseObject.error) {
+            NSLog(@"error:  %@",responseObject.error);
+            [SVProgressHUD showInfoWithStatus:responseObject.error.description];
+            [self.tableView.header endRefreshing];
+            return ;
+        }
         _movieItemM = responseObject.data;
         if (_movieItemM ==nil) {
             return ;
@@ -102,6 +131,8 @@
         NSLog(@"获取 附近电影城 成功");
     } failure:^(NSError *error) {
         NSLog(@"获取 附近电影城 失败");
+        [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
+        [self.tableView.header endRefreshing];
     }];
 }
 

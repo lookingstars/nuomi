@@ -31,7 +31,7 @@
     self.navigationController.navigationBarHidden = NO;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self initData];
-    [self requestData];
+    [self setUpTableView];
     
     NSLog(@"specialid:%@",self.specialid);
 }
@@ -43,6 +43,19 @@
 
 -(void)initData {
     _dataSource = [[NSMutableArray alloc] init];
+}
+
+//MJRefresh下拉刷新，跟上一个版本比，有的方法变了，具体用发要参考源码
+-(void)setUpTableView{
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
+    //    self.tableView.header = [MJChiBaoZiHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableView.header = [JZNuomiHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    // 马上进入刷新状态
+    [self.tableView.header beginRefreshing];
+}
+
+-(void)loadNewData{
+    [self requestData];
 }
 
 //197611
@@ -86,6 +99,12 @@
     __weak typeof(self) weakself = self;
     [request getDataWithURL:url params:nil success:^(OPDataResponse *responseObject) {
         NSLog(@"请求 topic 数据成功");
+        if (responseObject.error) {
+            NSLog(@"error:  %@",responseObject.error);
+            [SVProgressHUD showInfoWithStatus:responseObject.error.description];
+            [self.tableView.header endRefreshing];
+            return ;
+        }
         if (responseObject.code == 0) {
             self.topicM = responseObject.data;
             _dataSource = [NSMutableArray arrayWithArray:self.topicM.special_list];
@@ -96,8 +115,11 @@
         
         
         [weakself.tableView reloadData];
+        [self.tableView.header endRefreshing];
     } failure:^(NSError *error) {
         NSLog(@"请求 topic 数据失败");
+        [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
+        [self.tableView.header endRefreshing];
     }];
 
 }

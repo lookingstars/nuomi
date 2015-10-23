@@ -158,6 +158,8 @@
         NSLog(@"获取 首页 数据成功");
         if (responseObject.error) {
             NSLog(@"error:  %@",responseObject.error);
+            [SVProgressHUD showInfoWithStatus:responseObject.error.description];
+            [self.tableView.header endRefreshing];
             return ;
         }
         _homepageM = responseObject.data;
@@ -176,6 +178,7 @@
     } failure:^(NSError *error) {
         NSLog(@"获取 首页 数据失败");
         // 拿到当前的下拉刷新控件，结束刷新状态
+        [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
         [self.tableView.header endRefreshing];
     }];
 }
@@ -191,6 +194,8 @@
         NSLog(@"获取 猜你喜欢 数据成功");
         if (responseObject.error) {
             NSLog(@"error:  %@",responseObject.error);
+            [SVProgressHUD showInfoWithStatus:responseObject.error.description];
+            [self.tableView.header endRefreshing];
             return ;
         }
         if (responseObject.code == 0) {
@@ -205,6 +210,7 @@
     } failure:^(NSError *error){
         NSLog(@"获取 猜你喜欢 数据失败");
         // 拿到当前的下拉刷新控件，结束刷新状态
+        [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
         [self.tableView.header endRefreshing];
     }];
 }

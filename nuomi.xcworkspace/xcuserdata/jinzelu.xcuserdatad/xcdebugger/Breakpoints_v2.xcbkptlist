@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "nuomi/Controller/&#x9996;&#x9875;/&#x7cbe;&#x9009;&#x62a2;&#x8d2d;/JZJingXuanViewController.m"
-            timestampString = "467177724.610079"
+            timestampString = "467281462.196343"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "-requestData"
             landmarkType = "5">
          </BreakpointContent>

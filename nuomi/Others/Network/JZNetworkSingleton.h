@@ -24,7 +24,7 @@ typedef void(^FailureBlock)(NSError *error);
 
 +(instancetype)request;
 
-
+//    url内部添加有签名加密，所以只能把url写死，不能动态的改变url
 -(void)getDataWithURL:(NSString *)url params:(NSDictionary *)userInfo success:(SuccessBlock)success failure:(FailureBlock)failure;
 
 -(void)postDataWithURL:(NSString *)url params:(NSDictionary *)userInfo success:(SuccessBlock)success failure:(FailureBlock)failure;

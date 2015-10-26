@@ -12,5 +12,12 @@
 git命令： git clone https://github.com/lookingstars/nuomi.git  
 
 
+下面是效果图：  
+![image](https://github.com/lookingstars/nuomi/blob/master/nuomi/ScreenShot/dtt1.gif)  
+![image](https://github.com/lookingstars/nuomi/blob/master/nuomi/ScreenShot/dtt2.gif)  
+![image](https://github.com/lookingstars/nuomi/blob/master/nuomi/ScreenShot/dtt3.gif)  
+![image](https://github.com/lookingstars/nuomi/blob/master/nuomi/ScreenShot/dtt4.gif)  
+
+
 
 

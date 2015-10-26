@@ -70,7 +70,7 @@
     self.textField = [[UITextField alloc] initWithFrame:CGRectMake(10, 64+10, screen_width-60, 30)];
     self.textField.delegate = self;
     self.textField.clearButtonMode = UITextFieldViewModeAlways;
-    self.textField.placeholder = @"请 “尝试语音输入课程“";
+    self.textField.placeholder = @"请 “尝试语音输入“";
     self.textField.text = @"";
     self.textField.backgroundColor = RGB(242, 242, 242);
     self.textField.font = [UIFont systemFontOfSize:14];

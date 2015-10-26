@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface JZBaseTabBarViewController : UITabBarController
-
+@property(nonatomic, strong) UIImageView *advImage;
 @end

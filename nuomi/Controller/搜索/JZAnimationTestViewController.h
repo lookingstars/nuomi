@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "iflyMSC/iflyMSC.h"
 
-@interface JZAnimationTestViewController : UIViewController
+@interface JZAnimationTestViewController : UIViewController<IFlyRecognizerViewDelegate>
+
+
+@property (nonatomic, strong) UITextField *textField;
+
+@property (nonatomic, strong) IFlyRecognizerView *iflyRecognizerView;//带界面的识别对象
 
 @end

@@ -5,6 +5,8 @@
 
 iOS技术交流群：112365317  
 
+注：采用cocoapods管理第三方库，请双击nuomi.xcworkspace启动工程。不要双击nuomi.xcodeproj启动，否则会提示“library not found for -lPods-AFNetworking”
+
 
 # 注
 百度糯米官方版：采用少量的xib文件 + 大量的纯代码方式开发的。  

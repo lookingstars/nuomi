@@ -18,6 +18,21 @@ iOS技术交流群：112365317
 下载这个Demo时，最好采用git clone方式来下载代码，这样你就可以随时pull我的最新代码，而不用重新下载zip包了。  
 git命令： git clone https://github.com/lookingstars/nuomi.git  
 
+Xcode7，真机调试，如果出现下面的错误提示，提示友盟或者科大讯飞的library不支持bitcode
+
+解决办法：1.更新library
+
+2.关闭bitcode（Xcode7+以上才有，以下的没有这个配置项）
+
+![image](https://github.com/lookingstars/meituan/blob/master/meituan/screenshots/youmeng_ios9.png)
+
+1.更新library：
+友盟官方适配iOS9方案，暂时还没有适配iOS9的library。
+友盟官方解决方案：http://dev.umeng.com/social/ios/ios9
+
+2.关闭bitcode
+选择工程，target-》build setting -》enable bitcode设置为NO
+
 
 下面是效果图：  
 ![image](https://github.com/lookingstars/nuomi/blob/master/nuomi/ScreenShot/dtt1.gif)  

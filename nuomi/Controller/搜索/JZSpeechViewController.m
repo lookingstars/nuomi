@@ -49,8 +49,46 @@
 //    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(HideKeyboard)];
 //    [self.view addGestureRecognizer:tap];
     
-    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(50, 200, 60, 40);
+    btn.tag = 100;
+    [btn setTitle:@"按钮" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(OnTapBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
 }
+
+-(void)OnTapBtn:(UIButton *)sender{
+    UIButton *btn = (UIButton *)[self.view viewWithTag:100];
+    CAKeyframeAnimation *animation=[self shakeAnimation:btn.layer.frame];
+    [btn.layer addAnimation:animation forKey:kCATransition];
+}
+
+static int numberOfShakes = 3;//震动次数
+static float durationOfShake = 1.0f;//震动时间
+static float vigourOfShake = 0.05f;//震动幅度
+
+
+- (CAKeyframeAnimation *)shakeAnimation:(CGRect)frame
+{
+    CAKeyframeAnimation *shakeAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    
+    CGMutablePathRef shakePath = CGPathCreateMutable();
+    CGPathMoveToPoint(shakePath, NULL, CGRectGetMidX(frame), CGRectGetMidY(frame) );
+    for (int index = 0; index < numberOfShakes; ++index)
+    {
+        CGPathAddLineToPoint(shakePath, NULL, CGRectGetMidX(frame) - frame.size.width * vigourOfShake,CGRectGetMidY(frame));
+        CGPathAddLineToPoint(shakePath, NULL,  CGRectGetMidX(frame) + frame.size.width * vigourOfShake,CGRectGetMidY(frame));
+    }
+    CGPathCloseSubpath(shakePath);
+    shakeAnimation.path = shakePath;
+    shakeAnimation.duration = durationOfShake;
+    CFRelease(shakePath);
+    
+    return shakeAnimation;
+}
+
+
 
 -(void)HideKeyboard{
     [self.view endEditing:YES];

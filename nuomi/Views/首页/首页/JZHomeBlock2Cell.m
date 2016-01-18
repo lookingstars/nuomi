@@ -92,18 +92,22 @@
     CGFloat width = screen_width/2;
     CGFloat heigth = 80;
     CGFloat cellHeight = 0;
+    CGFloat maxHeight = 0;
     for (int i = 0; i < array.count; i++) {
         NSInteger col = [[array[i] objectForKey:@"adv_col"] integerValue];//列
         NSInteger row = [[array[i] objectForKey:@"adv_row"] integerValue];//行
         NSInteger block_width = [[array[i] objectForKey:@"adv_block_width"] integerValue];//宽
         NSInteger block_height = [[array[i] objectForKey:@"adv_block_height"] integerValue];//高
         
-        UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(width*(col-1), heigth*(row-1), width*block_width, heigth*block_height)];
+        UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(width*(col-1),heigth*(row-1), width*block_width, heigth*block_height)];
         cellHeight = CGRectGetMaxY(backView.frame);
-        
+        if (cellHeight > maxHeight) {
+            maxHeight = cellHeight;
+        }
+        NSLog(@"backView:%@",backView);
     }
     
-    return cellHeight;
+    return maxHeight;
 }
 
 -(void)OnTapBackView:(UITapGestureRecognizer *)sender{

@@ -25,6 +25,7 @@
 #import "JZNuomiHeader.h"
 #import "JZScanViewController.h"
 //#import "ZBarSDK.h"
+#include <objc/runtime.h>
 
 @interface JZHomeViewController ()<UITableViewDataSource, UITableViewDelegate,JZAlbumDelegate,JZHomeBlock2Delegate,HomeMenuDelegate>
 

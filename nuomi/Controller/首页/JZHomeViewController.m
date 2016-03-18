@@ -160,7 +160,7 @@
         if (responseObject.error) {
             NSLog(@"error:  %@",responseObject.error);
             [SVProgressHUD showInfoWithStatus:responseObject.error.description];
-            [self.tableView.header endRefreshing];
+            [weakself.tableView.header endRefreshing];
             return ;
         }
         _homepageM = responseObject.data;
@@ -173,14 +173,14 @@
         
         [weakself.tableView reloadData];
         // 拿到当前的下拉刷新控件，结束刷新状态
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
 //        NSLog(@"special===:   %@",_homepageM.special);
 //        NSLog(@"topten===:   %@",_homepageM.topten);
     } failure:^(NSError *error) {
         NSLog(@"获取 首页 数据失败");
         // 拿到当前的下拉刷新控件，结束刷新状态
         [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     }];
 }
 
@@ -196,7 +196,7 @@
         if (responseObject.error) {
             NSLog(@"error:  %@",responseObject.error);
             [SVProgressHUD showInfoWithStatus:responseObject.error.description];
-            [self.tableView.header endRefreshing];
+            [weakself.tableView.header endRefreshing];
             return ;
         }
         if (responseObject.code == 0) {
@@ -204,7 +204,7 @@
             _likeArray = homeShopM.tuan_list;
             [weakself.tableView reloadData];
             // 拿到当前的下拉刷新控件，结束刷新状态
-            [self.tableView.header endRefreshing];
+            [weakself.tableView.header endRefreshing];
         }else{
             
         }
@@ -212,7 +212,7 @@
         NSLog(@"获取 猜你喜欢 数据失败");
         // 拿到当前的下拉刷新控件，结束刷新状态
         [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     }];
 }
 

@@ -85,7 +85,7 @@
         if (responseObject.error) {
             NSLog(@"error:  %@",responseObject.error);
             [SVProgressHUD showInfoWithStatus:responseObject.error.description];
-            [self.tableView.header endRefreshing];
+            [weakself.tableView.header endRefreshing];
             return ;
         }
         JZMovieCardModel *movieCardM = responseObject.data;
@@ -94,11 +94,11 @@
         }
         _movieListArray = [NSMutableArray arrayWithArray:movieCardM.result];
         [weakself.tableView reloadData];
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     } failure:^(NSError *error) {
         NSLog(@"获取 最新电影 失败");
         [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     }];
 }
 
@@ -116,7 +116,7 @@
         if (responseObject.error) {
             NSLog(@"error:  %@",responseObject.error);
             [SVProgressHUD showInfoWithStatus:responseObject.error.description];
-            [self.tableView.header endRefreshing];
+            [weakself.tableView.header endRefreshing];
             return ;
         }
         _movieItemM = responseObject.data;
@@ -132,7 +132,7 @@
     } failure:^(NSError *error) {
         NSLog(@"获取 附近电影城 失败");
         [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     }];
 }
 

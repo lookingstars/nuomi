@@ -77,7 +77,7 @@
         if (responseObject.error) {
             NSLog(@"error:  %@",responseObject.error);
             [SVProgressHUD showInfoWithStatus:responseObject.error.description];
-            [self.tableView.header endRefreshing];
+            [weakself.tableView.header endRefreshing];
             return ;
         }
         _shopDetailM = responseObject.data;
@@ -87,7 +87,7 @@
     } failure:^(NSError *error) {
         NSLog(@"请求 店铺详情 失败");
         [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     }];
 }
 
@@ -110,7 +110,7 @@
         if (responseObject.error) {
             NSLog(@"error:  %@",responseObject.error);
             [SVProgressHUD showInfoWithStatus:responseObject.error.description];
-            [self.tableView.header endRefreshing];
+            [weakself.tableView.header endRefreshing];
             return ;
         }
         _shopCommentM = responseObject.data;
@@ -119,7 +119,7 @@
     } failure:^(NSError *error) {
         NSLog(@"请求 评论 失败");
         [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     }];
 }
 
@@ -135,7 +135,7 @@
         if (responseObject.error) {
             NSLog(@"error:  %@",responseObject.error);
             [SVProgressHUD showInfoWithStatus:responseObject.error.description];
-            [self.tableView.header endRefreshing];
+            [weakself.tableView.header endRefreshing];
             return ;
         }
         _shopRelatedM = responseObject.data;
@@ -145,7 +145,7 @@
     } failure:^(NSError *error) {
         NSLog(@"请求 热门推荐 失败");
         [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     }];
 }
 

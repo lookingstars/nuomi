@@ -20,7 +20,7 @@
 #import "iflyMSC/IFlySpeechRecognizerDelegate.h"
 
 #import "ISRDataHelper.h"
-
+#import <LocalAuthentication/LocalAuthentication.h>//指纹识别
 
 @interface JZSpeechViewController ()<IFlySpeechSynthesizerDelegate,IFlySpeechRecognizerDelegate,UITextFieldDelegate>
 {
@@ -46,6 +46,8 @@
     [self initIFly];
     [self initViews];
     
+    [self initTouchIDBtn];
+    
 //    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(HideKeyboard)];
 //    [self.view addGestureRecognizer:tap];
     
@@ -56,6 +58,10 @@
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(OnTapBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self initAnimationView];
 }
 
 -(void)OnTapBtn:(UIButton *)sender{
@@ -166,7 +172,23 @@ static float vigourOfShake = 0.05f;//震动幅度
 }
 
 
-
+-(void)initAnimationView{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    view.backgroundColor = [UIColor redColor];
+    [self.view addSubview:view];
+    
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
+    animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(150, 100)];
+    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(250, 100)];
+//    animation.timingFunction
+//    animation.beginTime
+    animation.duration = 1.0;
+    
+    
+    [view.layer addAnimation:animation forKey:nil];
+//    CAMediaTimingFunction
+    view.frame = CGRectOffset(view.frame, 100, 0);
+}
 
 
 
@@ -390,6 +412,35 @@ static float vigourOfShake = 0.05f;//震动幅度
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
+}
+
+//=============指纹识别==================
+-(void)initTouchIDBtn{
+    UIButton *touchIDBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    touchIDBtn.frame = CGRectMake(50, 300, 60, 40);
+    [touchIDBtn setTitle:@"指纹" forState:UIControlStateNormal];
+    [touchIDBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [touchIDBtn addTarget:self action:@selector(OnTouchIDBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:touchIDBtn];
+}
+
+-(void)OnTouchIDBtn:(UIButton *)sender{
+    if ([[UIDevice currentDevice].systemVersion floatValue] < 8.0) {
+        NSLog(@"不支持指纹识别");
+        return;
+    }else{
+        LAContext *ctx = [[LAContext alloc] init];
+        if ([ctx canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:nil]) {
+            NSLog(@"支持");
+            [ctx evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"指纹识别" reply:^(BOOL success, NSError * error) {
+                if (success) {
+                    NSLog(@"识别成功");
+                }else{
+                    NSLog(@"识别失败");
+                }
+            }];
+        }
+    }
 }
 
 

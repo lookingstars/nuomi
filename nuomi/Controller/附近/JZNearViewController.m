@@ -98,7 +98,7 @@
         if (responseObject.error) {
             NSLog(@"error:  %@",responseObject.error);
             [SVProgressHUD showInfoWithStatus:responseObject.error.description];
-            [self.tableView.header endRefreshing];
+            [weakself.tableView.header endRefreshing];
             return ;
         }
         if (responseObject.code == 0) {
@@ -110,12 +110,12 @@
         }else{
             NSLog(@"%@",responseObject.msg);
         }
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     } failure:^(NSError *error) {
         NSLog(@"请求 附近数据 失败");
         NSLog(@"%@",error);
         [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     }];
 }
 

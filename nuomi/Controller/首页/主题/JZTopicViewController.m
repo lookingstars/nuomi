@@ -102,11 +102,11 @@
         if (responseObject.error) {
             NSLog(@"error:  %@",responseObject.error);
             [SVProgressHUD showInfoWithStatus:responseObject.error.description];
-            [self.tableView.header endRefreshing];
+            [weakself.tableView.header endRefreshing];
             return ;
         }
         if (responseObject.code == 0) {
-            self.topicM = responseObject.data;
+            weakself.topicM = responseObject.data;
             _dataSource = [NSMutableArray arrayWithArray:self.topicM.special_list];
         }else{
             NSLog(@"%@",responseObject.errmsg);
@@ -115,11 +115,11 @@
         
         
         [weakself.tableView reloadData];
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     } failure:^(NSError *error) {
         NSLog(@"请求 topic 数据失败");
         [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     }];
 
 }
